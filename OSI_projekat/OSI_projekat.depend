@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1546109356 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.c
+	"loto.h"
+
+1546109317 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+
+1546504293 source:c:\users\dasica\desktop\osi2018-grupa-5\kviz.c
+	"kviz.h"
+
+1546504293 c:\users\dasica\desktop\osi2018-grupa-5\kviz.h
+	<stdio.h>
+	<windows.h>
+	<time.h>
+
+1546109776 source:c:\users\dasica\desktop\osi2018-grupa-5\loto.c
+	"loto.h"
+
+1546109776 c:\users\dasica\desktop\osi2018-grupa-5\loto.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+
+1546109776 source:c:\users\dasica\desktop\osi2018-grupa-5\main.c
+
+1546588080 source:c:\users\dasica\desktop\osi2018-grupa-5\pogodi_broj.c
+	"pogodi_broj.h"
+	"pomocne_funkcije.h"
+	"pomocne_funkcije.c"
+
+1546588080 c:\users\dasica\desktop\osi2018-grupa-5\pogodi_broj.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<stdlib.h>
+
+1546591243 c:\users\dasica\desktop\osi2018-grupa-5\pomocne_funkcije.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+
+1546591348 c:\users\dasica\desktop\osi2018-grupa-5\pomocne_funkcije.c
+	"pomocne_funkcije.h"
+

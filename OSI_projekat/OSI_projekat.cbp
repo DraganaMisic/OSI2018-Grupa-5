@@ -31,12 +31,27 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="kviz.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kviz.h" />
 		<Unit filename="loto.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="loto.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pogodi_broj.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pogodi_broj.h" />
+		<Unit filename="pomocne_funkcije.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="pomocne_funkcije.h">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Extensions>
 			<code_completion />
