@@ -29,7 +29,7 @@ void pitaj()
   if (kontrolaBodova())
   {
       fp=fopen("laganapitanja.txt","r");
-      brPitanja=80;  //broj pitanja u ovoj datoteci
+      brPitanja=100;  //broj pitanja u ovoj datoteci
       rezim=1;
   }
 
@@ -37,7 +37,7 @@ void pitaj()
     {
         fp=fopen("teskapitanja.txt","r");
         rezim=0;
-        brPitanja=70;                   //broj pitanja u ovoj datoteci
+        brPitanja=90;                   //broj pitanja u ovoj datoteci
     }
 
     if (fp  != NULL)
