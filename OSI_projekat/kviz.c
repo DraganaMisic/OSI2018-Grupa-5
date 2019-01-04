@@ -88,6 +88,7 @@ void pitaj()
                else
                {
                    printf("Netacan odgovor! Izgubili ste 30 bodova!\n\n");
+                   Sleep(2000);
                    izgubljeniBodovi+=30;
                    bodoviDrugaIgra-=30;
                }
@@ -122,10 +123,12 @@ void drugaIgra()
     {
         printf("Cestitamo! Tacno ste odgovori na svih 5 pitanja! Osvojili se dodatnih 50 bodova!\n");
         osvojeniBodovi+=50;
+        bodoviDrugaIgra+=50;
     }
     printf("\n Broj bodova: %d",bodoviDrugaIgra);
     if (bodoviDrugaIgra<0) printf("\nU ovoj igri ste izgubili %d bodova!",bodoviDrugaIgra);
     else printf("\nU ovoj igri ste dobili %d bodova!",bodoviDrugaIgra);
+    dodajStatistika("2",bodoviDrugaIgra);
 }
 
 
