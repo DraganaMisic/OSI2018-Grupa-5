@@ -128,7 +128,6 @@ void drugaIgra()
     printf("\n Broj bodova: %d",bodoviDrugaIgra);
     if (bodoviDrugaIgra<0) printf("\nU ovoj igri ste izgubili %d bodova!",bodoviDrugaIgra);
     else printf("\nU ovoj igri ste dobili %d bodova!",bodoviDrugaIgra);
-    dodajStatistika("2",bodoviDrugaIgra);
 }
 
 
