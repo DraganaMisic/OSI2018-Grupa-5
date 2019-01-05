@@ -1,6 +1,6 @@
 #include "pogodi_broj.h"
-#include "pomocne_funkcije.h"
-#include "pomocne_funkcije.c"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
 
 int pretrazivanje_pokusaja(int niz[], int kljuc)  // Pretrazuje da li smo 2x unijeli isti broj
 {
@@ -83,6 +83,7 @@ int rezim1()  // Rezim koji radi u slucaju da igrac ne ulazi prvi put u igru
         }
     }
 jump:
+    dodajStatistika("1", suma_bodova);
     return suma_bodova;
 }
 
@@ -94,7 +95,10 @@ int rezim0()   // Rezim koji radi ako je igrac prvi put u igri i omogucava mu da
     srand(time(NULL));
     printf("Pogodite zamisljeni broj u intervalu od 0 do 100: \n");
     do
-    {n=rand()%2;}while(n==0);
+    {
+        n=rand()%2;
+    }
+    while(n==0);
     if(n==1)
     {
         do
@@ -132,10 +136,10 @@ int rezim0()   // Rezim koji radi ako je igrac prvi put u igri i omogucava mu da
             else if(t!=100 && t!=0)
             {
                 printf("Zamisljeni broj je veci od unesenog! \n");
-                jump:
+jump:
                 printf("2. pokusaj: ");
                 scanf("%s",c);
-                 k1=ispravnostBroja100(c);
+                k1=ispravnostBroja100(c);
                 if(k1==1)
                 {
                     printf("Cestitamo, osvojili ste 50 bodova !\n");
@@ -146,13 +150,14 @@ int rezim0()   // Rezim koji radi ako je igrac prvi put u igri i omogucava mu da
         }
         while(k==0 && k1==0);
     }
+    dodajStatistika("1", suma_bodova);
     return suma_bodova;
 }
 
 void naslov()
 {
     ispisi();
-    printf("                                               POGODI ZAMISLJENI BROJ\n");
+    printf(ANSI_COLOR_CYAN "                                               POGODI ZAMISLJENI BROJ\n"ANSI_COLOR_RESET);
     ispisi();
     printf("\n");
 }
@@ -167,9 +172,13 @@ int igranje()     // Glavna funkcija koja se poziva u mainu
         {
             br_bodova += rezim0();
             br_igranja++;
+
         }
         else
+        {
             br_bodova += rezim1();
+
+        }
         do
         {
             printf("Da li zelite ponovo da igrate? (1/0) \n");
@@ -188,7 +197,7 @@ int igranje()     // Glavna funkcija koja se poziva u mainu
 }
 int ucitaj_karakter() // Provjerava da li je to sto se unosi broj (odnosno da nije neki karakter koji nije broj)
 {
-    int i,i1,i2,i3,i4,j;
+    int i,i1,i2,i3,j;
     char *c;
     c=(char *)calloc(512,sizeof(char));
 
