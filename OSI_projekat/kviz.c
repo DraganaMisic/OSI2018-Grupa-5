@@ -1,10 +1,18 @@
 #include "kviz.h"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
 
 void naslovKviz()
 {
-    printf("=======================================================================================================================\n");
-    printf("                                            <<<     K V I Z       >>>\n");
-    printf("=======================================================================================================================\n");
+    ispisi();
+    printf(ANSI_COLOR_CYAN"                                                     KVIZ\n"ANSI_COLOR_RESET );
+    ispisi();
+    printf("\n");
+}
+int kontrolaBodova()
+{
+    if (izgubljeniBodovi>osvojeniBodovi+0.4*osvojeniBodovi) return 1;
+    else return 0;
 }
 
 int pretragaPitanja(int niz[],int kljuc)
@@ -14,14 +22,10 @@ int pretragaPitanja(int niz[],int kljuc)
         if (niz[i]==kljuc) return 1;
     return 0;
 }
-int kontrolaBodova()
+int pitaj()
 {
-    if (izgubljeniBodovi>osvojeniBodovi+0.4*osvojeniBodovi) return 1;
-    else return 0;
-}
-void pitaj()
-{
-  FILE *fp;
+
+    FILE *fp;
   time_t t; //za random broj
   srand((unsigned) time(&t)); //za random broj
   int brPitanja,rezim,x;
@@ -97,15 +101,16 @@ void pitaj()
         }
       fclose(fp);
     }else printf("Greska prilikom otvaranja datoteke!");
+    return bodoviDrugaIgra;
 }
-
-void drugaIgra()
+int drugaIgra()
 {
-    bodoviDrugaIgra=0;
+   bodoviDrugaIgra=0;
     tacniOdgovori=0;
     system("cls");
+    jump6:
     naslovKviz();
-    printf("\n Broj bodova: %d",bodoviDrugaIgra); //treba promijeniti( trebaju ukupni bodovi)
+    printf("\n Broj bodova: %d",bodoviDrugaIgra);
     printf("\n\n");
     int i;
     for (i=0;i<5;i++)
@@ -128,8 +133,28 @@ void drugaIgra()
     printf("\n Broj bodova: %d",bodoviDrugaIgra);
     if (bodoviDrugaIgra<0) printf("\nU ovoj igri ste izgubili %d bodova!",bodoviDrugaIgra);
     else printf("\nU ovoj igri ste dobili %d bodova!",bodoviDrugaIgra);
-    dodajStatistika("2",bodoviDrugaIgra);
+    dodajStatistika("2", bodoviDrugaIgra);
+
+    char c3[20];
+    int p3;
+    do
+    {
+        printf("Da li zelite ponovo da igrate ovu igru ? (1/0)\n");
+        scanf("%s",c3);
+        p3=ispravnostBroja(c3);
+    }
+    while(p3==0);
+    p3=atoi(c3);
+    if(p3==1)
+    {
+        system("cls");
+        goto jump6;
+    }
+    else
+    return bodoviDrugaIgra;
+
 }
-
-
-
+void ispis(int bodoviDrugaIgra)
+{
+    printf("U ovoj igri ste osvojili %d bodova\n",bodoviDrugaIgra);
+}
