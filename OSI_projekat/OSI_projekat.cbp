@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="0" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -31,6 +32,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="brzo_kucanje.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="kviz.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -42,17 +46,30 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="meni.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="meni.h" />
+		<Unit filename="playground.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="playground.h" />
 		<Unit filename="pogodi_broj.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="pogodi_broj.h" />
 		<Unit filename="pomocne_funkcije.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="pomocne_funkcije.h">
-			<Option target="&lt;{~None~}&gt;" />
+		<Unit filename="pomocne_funkcije.h" />
+		<Unit filename="registracija.c">
+			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="registracija.h" />
+		<Unit filename="statistika.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="statistika.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

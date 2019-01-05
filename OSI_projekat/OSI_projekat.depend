@@ -1,53 +1,341 @@
 # depslib dependency file v1.0
-1514140574 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\main.c
+1546101726 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\main.c
 	<stdio.h>
-	<stdlib.h>
+	"meni.h"
+	"playground.h"
 
-1546109356 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.c
-	"loto.h"
-
-1546109317 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.h
+1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<windows.h>
 
-1546504293 source:c:\users\dasica\desktop\osi2018-grupa-5\kviz.c
+1545583120 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.c
+	"loto.h"
+
+1546083857 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\funkcije.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<conio.h>
+
+1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\meni.h
+	<stdio.h>
+	<windows.h>
+
+1546085329 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\meni.c
+	"meni.h"
+	"pomocne_funkcije.c"
+	"loto.h"
 	"kviz.h"
+	"pogodi_broj.h"
+	"registracija.h"
+	"meni.h"
 
-1546504293 c:\users\dasica\desktop\osi2018-grupa-5\kviz.h
-	<stdio.h>
-	<windows.h>
-	<time.h>
-
-1546109776 source:c:\users\dasica\desktop\osi2018-grupa-5\loto.c
-	"loto.h"
-
-1546109776 c:\users\dasica\desktop\osi2018-grupa-5\loto.h
+1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.h
 	<stdio.h>
 	<stdlib.h>
+	<windows.h>
+	<time.h>
+
+1546085533 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.c
+	"loto.h"
+	"pomocne_funkcije.h"
+	"kviz.h"
+	"pogodi_broj.c"
+	"registracija.h"
+	"meni.h"
+	"windows.h"
+
+1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<stdlib.h>
+
+1546085329 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.c
+	"loto.h"
+	"pomocne_funkcije.h"
+	"kviz.h"
+	"pogodi_broj.h"
+	"registracija.h"
+	"meni.h"
+
+1546102218 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\kviz.h
+	<stdio.h>
 	<time.h>
 	<windows.h>
 
-1546109776 source:c:\users\dasica\desktop\osi2018-grupa-5\main.c
+1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\registracija.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
 
-1546588080 source:c:\users\dasica\desktop\osi2018-grupa-5\pogodi_broj.c
+1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\playground.h
+	<stdio.h>
+	<windows.h>
+
+1545392666 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.c
+
+1546098086 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.c
+	"loto.h"
+
+1546102218 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\playground.c
+	"playground.h"
+	"meni.h"
+	"pomocne_funkcije.h"
+
+1546098746 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.c
 	"pogodi_broj.h"
 	"pomocne_funkcije.h"
-	"pomocne_funkcije.c"
 
-1546588080 c:\users\dasica\desktop\osi2018-grupa-5\pogodi_broj.h
-	<stdio.h>
-	<time.h>
-	<windows.h>
-	<stdlib.h>
-
-1546591243 c:\users\dasica\desktop\osi2018-grupa-5\pomocne_funkcije.h
-	<stdio.h>
-	<stdlib.h>
-	<windows.h>
-	<time.h>
-
-1546591348 c:\users\dasica\desktop\osi2018-grupa-5\pomocne_funkcije.c
+1546099181 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\registracija.c
+	"registracija.h"
 	"pomocne_funkcije.h"
+	"meni.h"
+
+1546101954 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\meni.c
+	"meni.h"
+	"pomocne_funkcije.h"
+
+1546102218 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\kviz.c
+	"kviz.h"
+	"pomocne_funkcije.h"
+
+1546101806 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.c
+	"pomocne_funkcije.h"
+
+1545392666 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\brzo_kucanje.c
+
+1546105117 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\kviz.c
+	"kviz.h"
+
+1546104751 c:\users\dasica\desktop\probni_projekat\osi_projekat\kviz.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+
+1546105280 c:\users\dasica\desktop\probni_projekat\osi_projekat\pomocne_funkcije.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+
+1546098086 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\loto.c
+	"loto.h"
+
+1546101954 c:\users\dasica\desktop\probni_projekat\osi_projekat\loto.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+
+1546103820 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\main.c
+	<stdio.h>
+	"meni.h"
+	"playground.h"
+
+1546105250 c:\users\dasica\desktop\probni_projekat\osi_projekat\meni.h
+	<stdio.h>
+	<windows.h>
+
+1546101954 c:\users\dasica\desktop\probni_projekat\osi_projekat\playground.h
+	<stdio.h>
+	<windows.h>
+
+1546105139 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\meni.c
+	"meni.h"
+
+1546105191 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\playground.c
+	"playground.h"
+	"meni.h"
+	"pomocne_funkcije.h"
+
+1546105200 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\pogodi_broj.c
+	"pogodi_broj.h"
+
+1546105262 c:\users\dasica\desktop\probni_projekat\osi_projekat\pogodi_broj.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<stdlib.h>
+
+1546105222 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\pomocne_funkcije.c
+	"pomocne_funkcije.h"
+
+1546105236 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\registracija.c
+	"registracija.h"
+
+1546101954 c:\users\dasica\desktop\probni_projekat\osi_projekat\registracija.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1546698031 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\brzo_kucanje.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"pomocne_funkcije.h"
+	"brzo_kucanje.h"
+
+1546698024 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\kviz.c
+	"kviz.h"
+
+1546650777 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\kviz.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<math.h>
+
+1546698037 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\loto.c
+	"loto.h"
+
+1546101954 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\loto.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+
+1546607268 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\main.c
+	<stdio.h>
+	"meni.h"
+	"playground.h"
+
+1546608092 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\meni.h
+	<stdio.h>
+	<windows.h>
+
+1546101954 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\playground.h
+	<stdio.h>
+	<windows.h>
+
+1546705279 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\meni.c
+	"meni.h"
+
+1546697852 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\playground.c
+	"playground.h"
+	"meni.h"
+	"pomocne_funkcije.h"
+
+1546105280 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\pomocne_funkcije.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+
+1546700185 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\pogodi_broj.c
+	"pogodi_broj.h"
+
+1546105262 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\pogodi_broj.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<stdlib.h>
+
+1546625291 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\pomocne_funkcije.c
+	"pomocne_funkcije.h"
+
+1546105236 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\registracija.c
+	"registracija.h"
+
+1546101954 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\registracija.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1546693926 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\brzo_kucanje.h
+
+1546703103 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\statistika.c
+	"statistika.h"
+
+1546696847 c:\users\milos skobic\desktop\probni_projekat\osi_projekat\statistika.h
+	<stdio.h>
+	<windows.h>
+	<time.h>
+
+1546705052 source:c:\users\milos skobic\desktop\probni_projekat\osi_projekat\dodavanje_u_csv.c
+
+1546698031 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\brzo_kucanje.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"pomocne_funkcije.h"
+	"brzo_kucanje.h"
+
+1546105280 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\pomocne_funkcije.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+
+1546693926 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\brzo_kucanje.h
+
+1546698024 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\kviz.c
+	"kviz.h"
+
+1546650777 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\kviz.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<math.h>
+
+1546698037 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\loto.c
+	"loto.h"
+
+1546101954 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\loto.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+
+1546607268 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\main.c
+	<stdio.h>
+	"meni.h"
+	"playground.h"
+
+1546608092 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\meni.h
+	<stdio.h>
+	<windows.h>
+
+1546101954 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\playground.h
+	<stdio.h>
+	<windows.h>
+
+1546705279 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\meni.c
+	"meni.h"
+
+1546697852 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\playground.c
+	"playground.h"
+	"meni.h"
+	"pomocne_funkcije.h"
+
+1546700185 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\pogodi_broj.c
+	"pogodi_broj.h"
+
+1546105262 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\pogodi_broj.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<stdlib.h>
+
+1546625291 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\pomocne_funkcije.c
+	"pomocne_funkcije.h"
+
+1546105236 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\registracija.c
+	"registracija.h"
+
+1546101954 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\registracija.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1546703103 source:c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\statistika.c
+	"statistika.h"
+
+1546696847 c:\users\sienceofmind\desktop\probni_projekat - copy\osi_projekat\statistika.h
+	<stdio.h>
+	<windows.h>
+	<time.h>
 
