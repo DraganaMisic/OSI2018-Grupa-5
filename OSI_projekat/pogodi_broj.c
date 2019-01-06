@@ -45,7 +45,7 @@ int brojac_bodova(int pokusaj)     // Broji bodove
 int rezim1()  // Rezim koji radi u slucaju da igrac ne ulazi prvi put u igru
 {
     int suma_bodova = 0;
-    int niz_pokusaja[6],i,k;
+    int niz_pokusaja[6]={150,150,150,150,150,150},i,k;
     printf("Pogodite zamisljeni broj u intervalu od 0 do 100: \n");
     int p = generator();
     int broj;

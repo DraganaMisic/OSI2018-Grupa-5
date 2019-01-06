@@ -4,7 +4,7 @@
 #include <windows.h>
 int meni1(int n);
 void prviIspis(int );
-void meni2(int n);
+int meni2(int n);
 void zadnjiIspis(int );
 void naslovPlayGround();
 
