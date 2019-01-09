@@ -70,7 +70,7 @@ void dodajStatistika(char *brIgre, int bodovi)
     {
        int i;
         for (i=0;i<br;i++)
-         fprintf(fp,"%d.,       %d,      %d.%d.%d.\n",i+1,bod[i],niz[i].dan,niz[i].mjesec, niz[i].godina);
+         fprintf(fp,"%d.,%d,%d.%d.%d.\n",i+1,bod[i],niz[i].dan,niz[i].mjesec, niz[i].godina);
         fclose(fp);
     }
     else printf("Greska pri otvaranju datoteke za pisanje!");
