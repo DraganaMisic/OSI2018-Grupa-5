@@ -5,7 +5,7 @@
 
 void PlayGround()
 {
-    FILE *kljucevi;
+    FILE *kljucevi, *otkazivanje;
     system("COLOR 71");
     char n[20],p[20];
     FILE *fp;
@@ -30,12 +30,24 @@ jump:
     p1=atoi(n);
     if(p1==1)
     {
-
+if(otkazivanje=fopen("otkazana1.txt", "r"))
+        {
+            system("cls");
+            fclose(otkazivanje);
+            prviIspis(ukupnoBodovi);
+            printf("Unesite redni broj igre koju zelite da igrate: \n\n");
+            printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
+            Sleep(2500);
+            system("cls");
+             goto jump;
+        }
         if(kljucevi=fopen("trajanje_kljuca1.txt","r"))
         {
             fclose(kljucevi);
             goto skok1;
         }
+
+
         else
         {
 
@@ -69,11 +81,22 @@ skok1:
     }
     if(p1==2)
     {
+        if(otkazivanje=fopen("otkazana2.txt", "r"))
+        {system("cls");
+            fclose(otkazivanje);
+            prviIspis(ukupnoBodovi);
+            printf("Unesite redni broj igre koju zelite da igrate: \n\n");
+            printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
+            Sleep(2500);
+            system("cls");
+             goto jump;
+        }
         if(kljucevi=fopen("trajanje_kljuca2.txt", "r"))
         {
             fclose(kljucevi);
             goto skok2;
         }
+
         else
         {
 
@@ -103,11 +126,22 @@ skok2:
     }
     if(p1==3)
     {
+        if(otkazivanje=fopen("otkazana3.txt", "r"))
+        {system("cls");
+            fclose(otkazivanje);
+            prviIspis(ukupnoBodovi);
+            printf("Unesite redni broj igre koju zelite da igrate: \n\n");
+            printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
+            Sleep(2500);
+            system("cls");
+             goto jump;
+        }
         if(kljucevi=fopen("trajanje_kljuca3.txt", "r"))
         {
             fclose(kljucevi);
             goto skok3;
         }
+
         else
         {
 
@@ -165,11 +199,23 @@ jump6:
     }
     if(p1==4)
     {
+        if(otkazivanje=fopen("otkazana4.txt", "r"))
+        {
+            system("cls");
+            fclose(otkazivanje);
+            prviIspis(ukupnoBodovi);
+            printf("Unesite redni broj igre koju zelite da igrate: \n\n");
+            printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
+            Sleep(2500);
+            system("cls");
+             goto jump;
+        }
         if(kljucevi=fopen("trajanje_kljuca4.txt", "r"))
         {
             fclose(kljucevi);
             goto skok4;
         }
+
         else
         {
 

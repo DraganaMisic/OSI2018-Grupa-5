@@ -139,7 +139,7 @@ int drugaIgra()
     int p3;
     do
     {
-        printf("Da li zelite ponovo da igrate ovu igru ? (1/0)\n");
+        printf("\nDa li zelite ponovo da igrate ovu igru ? (1/0)\n");
         scanf("%s",c3);
         p3=ispravnostBroja(c3);
     }
@@ -156,5 +156,5 @@ int drugaIgra()
 }
 void ispis(int bodoviDrugaIgra)
 {
-    printf("U ovoj igri ste osvojili %d bodova\n",bodoviDrugaIgra);
+    printf("\nU ovoj igri ste osvojili %d bodova\n",bodoviDrugaIgra);
 }

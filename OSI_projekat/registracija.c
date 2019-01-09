@@ -101,7 +101,7 @@ void registracija()
         else
         {
             printf("Izasli ste iz platforme !");
-            Sleep(2500);
+            Sleep(1000);
             system("cls");
         }
 
@@ -118,20 +118,20 @@ void registracija()
         }
         printf("\n");
         printf("POZDRAV %s!",imeKorisnika);
-        Sleep(2500);
+        Sleep(1000);
         system("cls");
         int t=meniRegistracija2();
         if(t==1)
         {
 
             fclose(fp);
-            Sleep(2500);
+            Sleep(1000);
             system("cls");
         }
         else
         {
             printf("Izasli ste iz platforme !");
-            Sleep(2500);
+            Sleep(1000);
             system("cls");
         }
         // return 1;

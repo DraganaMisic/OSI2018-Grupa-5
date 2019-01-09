@@ -181,7 +181,7 @@ void upisi_vrijeme(char *naziv_datoteke, int i)
     time_t t = time(NULL);
     struct tm *ptm = localtime(&t);
     char buf[256];
-    strftime(buf, sizeof(buf), "%d.%m.%Y  %H.%M.%S", ptm);
+    strftime(buf, sizeof(buf), "%d.%m.%Y  %H:%M:%S", ptm);
     fprintf(fp, "%s", buf);
     fclose(fp);
     //char redni_brojevi[4];
@@ -221,7 +221,7 @@ int otkljucavanje(int broj_igre)
     {
         fp=fopen("kljucevi7d.txt", "r");
         if(provjera_kljuca("kljucevi7d.txt"))
-            printf("Unijeli ste validan kljuc.\n");
+            printf("Unijeli ste validan kljuc. Igra je otkljucana na 7 dana.\n");
         fclose(fp);
         Sleep(1000);
         system("cls");
@@ -234,7 +234,7 @@ int otkljucavanje(int broj_igre)
 
         fp=fopen("kljucevi1d.txt", "r");
         if(provjera_kljuca("kljucevi1d.txt"))
-            printf("Unijeli ste validan kljuc.");
+            printf("Unijeli ste validan kljuc. Igra je otkljucana na 1 dan.");
         fclose(fp);
         Sleep(1000);
         system("cls");
@@ -245,7 +245,7 @@ int otkljucavanje(int broj_igre)
     {
         fp=fopen("kljucevi1s.txt", "r");
         if(provjera_kljuca("kljucevi1s.txt"))
-            printf("Unijeli ste validan kljuc.",3);
+            printf("Unijeli ste validan kljuc. Igra je otkljucana na 1 sat.",3);
         fclose(fp);
         Sleep(1000);
         system("cls");
@@ -321,6 +321,6 @@ long long razlika_vremena(char *buf1,char *buf2)
     long long c;
     //printf("%d ",prvo_vrijeme.tm_sec);
     c=difftime(mktime(&prvo_vrijeme),mktime(&drugo_vrijeme));
-    printf("%lld",c);
+    return c;
 }
 

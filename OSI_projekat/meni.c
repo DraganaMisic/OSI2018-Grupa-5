@@ -14,7 +14,11 @@ void ispis_opcija()
     printf("1 - Povratak nazad\n");
     printf("2 - Povratak na meni za izbor igre\n");
 }
+<<<<<<< Updated upstream
 int meni2(int x)
+=======
+int meni2(int broj_igre ,char *naziv_datoteke)
+>>>>>>> Stashed changes
 {
 
     int p;
@@ -33,14 +37,96 @@ int meni2(int x)
     p=atoi(n);
     if(p==1)
     {
+<<<<<<< Updated upstream
+=======
+
+        FILE *fp=fopen(naziv_datoteke,"r");
+        char staro_vrijeme[256]= {0},novo_vrijeme[256]= {0};
+        fgets(staro_vrijeme,256,fp);
+        time_t t = time(NULL);
+        struct tm *ptm = localtime(&t);
+        strftime(novo_vrijeme, sizeof(novo_vrijeme), "%d.%m.%Y  %H:%M:%S", ptm);
+        long long proteklo_vrijeme=razlika_vremena(novo_vrijeme,staro_vrijeme);
+        if(broj_igre==1)
+            if(proteklo_vrijeme>20)
+            {
+                printf("\nTrajanje kljuca za ovu igru je isteklo!");
+                Sleep(2000);
+                system("cls");
+                return 1;
+            }
+            else
+                return 2;
+        else if(broj_igre==2)
+            if(proteklo_vrijeme>24*3600)
+            {
+                printf("\nTrajanje kljuca za ovu igru je isteklo!");
+                Sleep(2000);
+                system("cls");
+                return 1;
+            }
+            else
+                return 2;
+        else if(broj_igre==3)
+            if(proteklo_vrijeme>3600)
+            {
+
+                printf("\nTrajanje kljuca za ovu igru je isteklo!");
+                Sleep(2000);
+                system("cls");
+                return 1;
+            }
+            else
+                return 2;
+        else if(broj_igre==4)
+                return 2;
+>>>>>>> Stashed changes
         system("cls");
-        return 2;
     }
     else if(p==2)
-        printf("Otkazali ste igru, vas kljuc je ponisten\n");
+    {
+        FILE *fp;
+        if(broj_igre==1)
+        {
+            fp=fopen("otkazana1.txt", "w");
+            fclose(fp);
+            printf("Otkazali ste igru, vas kljuc je ponisten\n");
+        Sleep(2500);
+        system("cls");
+            return 1;
+        }
+        if(broj_igre==2)
+        {
+            fp=fopen("otkazana2.txt", "w");
+            fclose(fp);
+            printf("Otkazali ste igru, vas kljuc je ponisten\n");
+        Sleep(2500);
+        system("cls");
+            return 1;
+        }
+        if(broj_igre==3)
+        {
+            fp=fopen("otkazana3.txt", "w");
+            fclose(fp);
+            printf("Otkazali ste igru, vas kljuc je ponisten\n");
+        Sleep(2500);
+        system("cls");
+            return 1;
+        }
+        if(broj_igre==4)
+        {
+            fp=fopen("otkazana4.txt", "w");
+            fclose(fp);
+            printf("Otkazali ste igru, vas kljuc je ponisten\n");
+        Sleep(2500);
+        system("cls");
+            return 1;
+        }
+    }
+
     else if(p==3)
     {
-        if(x==1)
+        if(broj_igre==1)
         {
             system("cls");
             naslov();
@@ -66,7 +152,7 @@ int meni2(int x)
                 return 1;
             }
         }
-        else if(x==2)
+        else if(broj_igre==2)
         {
             system("cls");
             naslovKviz();
@@ -92,7 +178,7 @@ int meni2(int x)
                 return 1;
             }
         }
-        else if(x==3)
+        else if(broj_igre==3)
         {
             system("cls");
             okvir();
@@ -118,7 +204,7 @@ int meni2(int x)
                 return 1;
             }
         }
-        else if(x==4)
+        else if(broj_igre==4)
         {
             system("cls");
             naslovBrzoKucanje();
@@ -148,7 +234,7 @@ int meni2(int x)
     }
     else if(p==4)
     {
-        if(x==1)
+        if(broj_igre==1)
         {
             system("cls");
             naslov();
@@ -174,7 +260,7 @@ int meni2(int x)
                 return 1;
             }
         }
-        else if(x==2)
+        else if(broj_igre==2)
         {
             system("cls");
             naslovKviz();
@@ -200,7 +286,7 @@ int meni2(int x)
                 return 1;
             }
         }
-        else if(x==3)
+        else if(broj_igre==3)
         {
             system("cls");
             okvir();
@@ -226,7 +312,7 @@ int meni2(int x)
                 return 1;
             }
         }
-        else if(x==4)
+        else if(broj_igre==4)
         {
             system("cls");
             naslovBrzoKucanje();
@@ -258,7 +344,8 @@ int meni2(int x)
 }
 int meni1(int broj_igre)
 {
-
+    printf("broj=%d ", broj_igre);
+    Sleep(2500);
     int p;
     char n[20];
     printf("Izaberite opciju koju zelite ! (1/2/3/4)\n");
@@ -281,6 +368,28 @@ int meni1(int broj_igre)
     }
     else if(p==2)
     {
+
+        FILE *fp;
+        if(broj_igre==1)
+        {
+            fp=fopen("otkazana1.txt", "w");
+            fclose(fp);
+        }
+        if(broj_igre==2)
+        {
+            fp=fopen("otkazana2.txt", "w");
+            fclose(fp);
+        }
+        if(broj_igre==3)
+        {
+            fp=fopen("otkazana3.txt", "w");
+            fclose(fp);
+        }
+        if(broj_igre==4)
+        {
+            fp=fopen("otkazana4.txt", "w");
+            fclose(fp);
+        }
         printf("Otkazali ste igru, vas kljuc je ponisten\n");
         Sleep(2500);
         system("cls");
