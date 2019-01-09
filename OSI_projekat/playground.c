@@ -30,7 +30,7 @@ jump:
     p1=atoi(n);
     if(p1==1)
     {
-if(otkazivanje=fopen("otkazana1.txt", "r"))
+        if(otkazivanje=fopen("otkazana1.txt", "r"))
         {
             system("cls");
             fclose(otkazivanje);
@@ -39,7 +39,7 @@ if(otkazivanje=fopen("otkazana1.txt", "r"))
             printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
             Sleep(2500);
             system("cls");
-             goto jump;
+            goto jump;
         }
         if(kljucevi=fopen("trajanje_kljuca1.txt","r"))
         {
@@ -82,14 +82,15 @@ skok1:
     if(p1==2)
     {
         if(otkazivanje=fopen("otkazana2.txt", "r"))
-        {system("cls");
+        {
+            system("cls");
             fclose(otkazivanje);
             prviIspis(ukupnoBodovi);
             printf("Unesite redni broj igre koju zelite da igrate: \n\n");
             printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
             Sleep(2500);
             system("cls");
-             goto jump;
+            goto jump;
         }
         if(kljucevi=fopen("trajanje_kljuca2.txt", "r"))
         {
@@ -127,14 +128,15 @@ skok2:
     if(p1==3)
     {
         if(otkazivanje=fopen("otkazana3.txt", "r"))
-        {system("cls");
+        {
+            system("cls");
             fclose(otkazivanje);
             prviIspis(ukupnoBodovi);
             printf("Unesite redni broj igre koju zelite da igrate: \n\n");
             printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
             Sleep(2500);
             system("cls");
-             goto jump;
+            goto jump;
         }
         if(kljucevi=fopen("trajanje_kljuca3.txt", "r"))
         {
@@ -209,7 +211,7 @@ jump6:
             printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
             Sleep(2500);
             system("cls");
-             goto jump;
+            goto jump;
         }
         if(kljucevi=fopen("trajanje_kljuca4.txt", "r"))
         {

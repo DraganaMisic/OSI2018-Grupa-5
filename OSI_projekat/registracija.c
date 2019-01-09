@@ -126,7 +126,7 @@ void registracija()
         {
 
             fclose(fp);
-            Sleep(1000);
+            //Sleep(1000);
             system("cls");
         }
         else

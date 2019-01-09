@@ -339,7 +339,7 @@ int meni2(int broj_igre ,char *naziv_datoteke)
 }
 int meni1(int broj_igre)
 {
-    Sleep(2500);
+    //Sleep(2500);
     int p;
     char n[20];
     printf("Izaberite opciju koju zelite ! (1/2/3/4)\n");
