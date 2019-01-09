@@ -1,5 +1,9 @@
 #include "loto.h"
+<<<<<<< Updated upstream
 
+=======
+#include <ctype.h>
+>>>>>>> Stashed changes
 int *unos()     //funkcija za unos 7 brojeva
 {
 
@@ -13,17 +17,25 @@ int *unos()     //funkcija za unos 7 brojeva
         char c[100];
         printf(" %d. broj:",n+1);
         scanf("%s",&c);
+<<<<<<< Updated upstream
         if(strlen(c)>=2)//provjera da li je upisan broj pa slovo
+=======
+        if(strlen(c)>=2)
+>>>>>>> Stashed changes
         {
             if(strlen(c)==2)
             if(isdigit(c[1]))
                 slovo=1;
             else{
             if(isdigit(c[2])){
+<<<<<<< Updated upstream
+=======
+                printf("test\n");
+>>>>>>> Stashed changes
                 slovo=1;}
             else slovo=0;}
         }
-        if(strlen(c)==1)
+        if(strlen(c)==1)//u slucaju da je unesen jednocifren broj, slovo se postavlja na 1 kako bi se omogucio sljedeci uslov, inace program javlja da je bilo koji jednocifren broj van opsega
         {
             slovo=1;
         }
