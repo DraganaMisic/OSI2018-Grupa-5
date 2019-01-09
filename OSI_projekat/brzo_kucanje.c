@@ -80,7 +80,7 @@ void ispisNivoa(int k, int j)
 char generatorStringa()
 {
     char randomletter;
-    randomletter = 'a' + (rand() % 26);
+    randomletter = 'A' + (rand() % 26);
     return randomletter;
 }
 int cetvrtaIgra()

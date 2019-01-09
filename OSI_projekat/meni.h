@@ -7,5 +7,5 @@ void prviIspis(int );
 int meni2(int n);
 void zadnjiIspis(int );
 void naslovPlayGround();
-
+void ispis_opcija();
 #endif // MENI_H_INCLUDED

@@ -60,7 +60,8 @@ int ispravnostBroja100(char *n)
         printf("Pogresan unos, unesite ponovo !\n");
         return 0;
     }
-    else return 1;
+    else
+        return 1;
 }
 int ispravnostBroja(char *n)
 {
@@ -89,9 +90,9 @@ void ispis_bodova(int br_bodova)
 
 }
 
-int otkljucavanje()
+void generisanje_kljuceva(FILE *kljuc1, FILE *kljuc2, FILE *kljuc3, FILE *kljuc4)
 {
-    FILE *fp,*fp1,*fp2,*fp3;
+
     char c[120],x[120];
     int t;
     char s1[120],s2[120],s3[120],s4[120],s5[120],s6[120],s7[120],s8[120];
@@ -148,87 +149,120 @@ int otkljucavanje()
     itoa(c14,s14,10);
     itoa(c15,s15,10);
     itoa(c16,s16,10);
-    fp=fopen("kljucevineograniceno.txt","w");
-    if(fp)
+    kljuc1=fopen("kljucevi7d.txt","w");
+    if(kljuc1)
     {
-        fprintf(fp,"%s-%s-%s-%s",&s1,&s2,&s3,&s4);
-        fclose(fp);
+        fprintf(kljuc1,"%s-%s-%s-%s",&s1,&s2,&s3,&s4);
+        fclose(kljuc1);
     }
-    fp1=fopen("kljucevi1h.txt","w");
-    if(fp1)
+    kljuc2=fopen("kljucevi1d.txt","w");
+    if(kljuc2)
     {
-        fprintf(fp1,"%s-%s-%s-%s",&s5,&s6,&s7,&s8);
-        fclose(fp1);
+        fprintf(kljuc2,"%s-%s-%s-%s",&s5,&s6,&s7,&s8);
+        fclose(kljuc2);
     }
-    fp2=fopen("kljucevi1d.txt","w");
-    if(fp2)
+    kljuc3=fopen("kljucevi1s.txt","w");
+    if(kljuc3)
     {
-        fprintf(fp2,"%s-%s-%s-%s",&s9,&s10,&s11,&s12);
-        fclose(fp2);
+        fprintf(kljuc3,"%s-%s-%s-%s",&s9,&s10,&s11,&s12);
+        fclose(kljuc3);
     }
-    fp3=fopen("kljucevi7d.txt","w");
-    if(fp3)
+    kljuc4=fopen("kljucevineograniceno.txt","w");
+    if(kljuc4)
     {
-        fprintf(fp3,"%s-%s-%s-%s",&s13,&s14,&s15,&s16);
-        fclose(fp3);
+        fprintf(kljuc4,"%s-%s-%s-%s",&s13,&s14,&s15,&s16);
+        fclose(kljuc4);
     }
-    printf("Unesite kljuc u formatu XXXX-XXXX-XXXX-XXXX\n");
-    scanf("%s",&c);
-    fp=fopen("kljucevineograniceno.txt","r");
-    fp1=fopen("kljucevi1h.txt","r");
-    fp2=fopen("kljucevi1d.txt","r");
-    fp3=fopen("kljucevi7d.txt","r");
-    if(fp && fp1 && fp2 && fp3)
+}
+void upisi_vrijeme(char *naziv_datoteke, int i)
+{
+    FILE *fp;
+    fp=fopen(naziv_datoteke, "w");
+    time_t t = time(NULL);
+    struct tm *ptm = localtime(&t);
+    char buf[256];
+    strftime(buf, sizeof(buf), "%d.%m.%Y  %H.%M.%S", ptm);
+    fprintf(fp, "%s", buf);
+    fclose(fp);
+    //char redni_brojevi[4];
+    //redni_brojevi[i-1]=i;
+    fp=fopen("otkljucane_igre.txt", "a");
     {
-        fscanf(fp,"%s",x);
-        t=strcmp(c,x);
-        fscanf(fp1,"%s",x);
-        int t1=strcmp(c,x);
-        fscanf(fp2,"%s",x);
-        int t2=strcmp(c,x);
-        fscanf(fp3,"%s",x);
-        int t3=strcmp(c,x);
-        if(t==0)
-        {
-            printf("Kljuc je validan, igra je otkljucana neograniceno ! Srecno !\n");
-            Sleep(2500);
-            system("cls");
-            return 1;
-        }
-        else if(t1==0)
-        {
-            printf("Kljuc je validan, igra je otkljucana na 1 sat ! Srecno !\n");
-            Sleep(2500);
-            system("cls");
-            return 1;
-        }
-        else if(t2==0)
-        {
-            printf("Kljuc je validan, igra je otkljucana na 1 dan ! Srecno !\n");
-            Sleep(2500);
-            system("cls");
-            return 1;
-        }
-        else if(t3==0)
-        {
-            printf("Kljuc je validan, igra je otkljucana na 7 dana ! Srecno !\n");
-            Sleep(2500);
-            system("cls");
-            return 1;
-        }
-        else
-        {
-            printf("Kljuc nije validan, novi kljuc je generisan, vraceni ste u glavni meni !\n");
-            Sleep(3500);
-            system("cls");
-            fclose(fp);
+       // for(int j=0; j<4; j++)
+            fprintf(fp, "%d ",i);
+    }
+    fclose(fp);
+}
+int provjera_kljuca(char *naziv_datoteke)
+{
+    FILE *fp;
+    fp=fopen(naziv_datoteke, "r");
+    char postojeci_kljuc[20];
+    char uneseni_kljuc[20];
+    int i=1;
+    fscanf(fp, "%s", postojeci_kljuc);
+    printf("Unesite kljuc:(%s)\n", postojeci_kljuc);
+    do
+    {
+        if(i!=1)
+            printf("Unijeli ste pogresan kljuc. Molimo Vas da unesete ponovo.\n");
+        scanf("%s",uneseni_kljuc);
+        i++;
+    }
+    while((strcmp(postojeci_kljuc, uneseni_kljuc))!=0);
+    fclose(fp);
+    return 1;
+}
+int otkljucavanje(int broj_igre)
+{
 
-            return 0;
-        }
+    FILE *fp;
+    if(broj_igre==1)
+    {
+        fp=fopen("kljucevi7d.txt", "r");
+        if(provjera_kljuca("kljucevi7d.txt"))
+            printf("Unijeli ste validan kljuc.\n");
+        fclose(fp);
+        Sleep(1000);
+        system("cls");
+        upisi_vrijeme("trajanje_kljuca1.txt",1);
+
+
+    }
+    else if(broj_igre==2)
+    {
+
+        fp=fopen("kljucevi1d.txt", "r");
+        if(provjera_kljuca("kljucevi1d.txt"))
+            printf("Unijeli ste validan kljuc.");
+        fclose(fp);
+        Sleep(1000);
+        system("cls");
+        upisi_vrijeme("trajanje_kljuca2.txt",2);
+
+    }
+    else if(broj_igre==3)
+    {
+        fp=fopen("kljucevi1s.txt", "r");
+        if(provjera_kljuca("kljucevi1s.txt"))
+            printf("Unijeli ste validan kljuc.",3);
+        fclose(fp);
+        Sleep(1000);
+        system("cls");
+        upisi_vrijeme("trajanje_kljuca3",3);
+
     }
     else
-        printf("Greska prilikom otvaranja datoteke !");
-    fclose(fp);
+    {
+        fp=fopen("kljucevi7d.txt", "r");
+        if(provjera_kljuca("kljucevineograniceno.txt"))
+            printf("Unijeli ste validan kljuc.");
+        fclose(fp);
+        Sleep(1000);
+        system("cls");
+        upisi_vrijeme("trajanje_kljuca4.txt",4);
+
+    }
 }
 void pamtiBodove(int ukupnoBodovi)
 {
@@ -248,5 +282,3 @@ void pamtiBodove(int ukupnoBodovi)
         //return 0;
     }
 }
-
-

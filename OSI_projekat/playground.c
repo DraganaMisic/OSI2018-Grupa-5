@@ -5,10 +5,13 @@
 
 void PlayGround()
 {
+    FILE *kljucevi;
     system("COLOR 71");
     char n[20],p[20];
     registracija();
     int bodoviPrvaIgra=0,bodoviDrugaIgra,bodoviTrecaIgra,bodoviCetvrtaIgra,ukupnoBodovi=10,n1,p1;
+    FILE *kljuc1,*kljuc2,*kljuc3,*kljuc4;
+    generisanje_kljuceva(kljuc1, kljuc2, kljuc3, kljuc4);
     int t=ucitajBodove();
     if(t!=10)
         ukupnoBodovi=ucitajBodove();
@@ -25,91 +28,134 @@ jump:
     p1=atoi(n);
     if(p1==1)
     {
-skok1:
-        naslov();
-        int o=meni2(p1);
-        if(o==0)
-            goto skok1;
-        if(o==1)
-            goto jump;
-         if(o==2)
+
+        if(kljucevi=fopen("trajanje_kljuca1.txt","r"))
         {
-            system("cls");
+            fclose(kljucevi);
+            goto skok1;
+        }
+        else
+        {
+
+            int k1;
             naslov();
-            bodoviPrvaIgra=igranje();
-            ispis_bodova(bodoviPrvaIgra);
-            ukupnoBodovi+=bodoviPrvaIgra;
+            k1=meni1(p1);
+            if(k1==0)
+                goto jump;
+
+            else
+            {
+
+skok1:
+
+                naslov();
+                int o=meni2(p1);
+                if(o==0)
+                    goto skok1;
+                if(o==1)
+                    goto jump;
+                if(o==2)
+                {
+                    system("cls");
+                    naslov();
+                    bodoviPrvaIgra=igranje();
+                    ispis_bodova(bodoviPrvaIgra);
+                    ukupnoBodovi+=bodoviPrvaIgra;
+                }
+            }
         }
     }
     if(p1==2)
     {
-        int k2;
-        naslovKviz();
-        k2=meni1(p1);
-        if(k2==0)
-            goto jump;
+        if(kljucevi=fopen("trajanje_kljuca2.txt", "r"))
+        {
+            fclose(kljucevi);
+            goto skok2;
+        }
         else
         {
+
+            int k2;
+            naslovKviz();
+            k2=meni1(p1);
+            if(k2==0)
+                goto jump;
+            else
+            {
 skok2:
 
-            naslovKviz();
-            int o1=meni2(p1);
-            if(o1==0)
-                goto skok2;
-            else if(o1==2)
-            {
-                bodoviDrugaIgra=drugaIgra();
-                ukupnoBodovi+=bodoviDrugaIgra;
+                naslovKviz();
+                int o1=meni2(p1);
+                if(o1==0)
+                    goto skok2;
+                else if(o1==1)
+                    goto jump;
+                else if(o1==2)
+                {
+                    bodoviDrugaIgra=drugaIgra();
+                    ukupnoBodovi+=bodoviDrugaIgra;
+                }
             }
         }
 
     }
     if(p1==3)
     {
-        int k3;
-        okvir();
-        k3=meni1(p1);
-        if(k3==0)
-            goto jump;
+        if(kljucevi=fopen("trajanje_kljuca3.txt", "r"))
+        {
+            fclose(kljucevi);
+            goto skok3;
+        }
         else
         {
-skok3:
+
+            int k3;
             okvir();
-            int o2=meni2(p1);
-            if(o2==0)
-                goto skok3;
-            else if(o2==2)
+            k3=meni1(p1);
+            if(k3==0)
+                goto jump;
+            else
             {
-jump6:
-                if(ukupnoBodovi<100)
-                {
-                    okvir();
-                    printf("Nemate dovoljno bodova da pocnete igru !");
-                    Sleep(2000);
-                    system("cls");
+skok3:
+                okvir();
+                int o2=meni2(p1);
+                if(o2==0)
+                    goto skok3;
+                else if(o2==1)
                     goto jump;
-                }
-                else
+                else if(o2==2)
                 {
-                    ukupnoBodovi-=100;
-                    int *niz=unos();
-                    int *niz1=generisanje_brojeva();
-                    bodoviTrecaIgra=izvlacenje(niz,niz1);
-                    ukupnoBodovi+=bodoviTrecaIgra;
-                    char c3[20];
-                    int p3;
-                    do
+jump6:
+                    if(ukupnoBodovi<100)
                     {
-                        printf("Da li zelite ponovo da igrate ovu igru ? (1/0)\n");
-                        scanf("%s",c3);
-                        p3=ispravnostBroja(c3);
-                    }
-                    while(p3==0);
-                    p3=atoi(c3);
-                    if(p3==1)
-                    {
+                        okvir();
+                        printf("Nemate dovoljno bodova da pocnete igru !");
+                        Sleep(2000);
                         system("cls");
-                        goto jump6;
+                        goto jump;
+                    }
+                    else
+                    {
+                        ukupnoBodovi-=100;
+                        int *niz=unos();
+                        int *niz1=generisanje_brojeva();
+                        bodoviTrecaIgra=izvlacenje(niz,niz1);
+                        ukupnoBodovi+=bodoviTrecaIgra;
+                        char c3[20];
+                        int p3;
+                        do
+                        {
+                            printf("Da li zelite ponovo da igrate ovu igru ? (1/0)\n");
+                            scanf("%s",c3);
+                            p3=ispravnostBroja(c3);
+                        }
+                        while(p3==0);
+                        p3=atoi(c3);
+                        if(p3==1)
+                        {
+                            system("cls");
+                            goto jump6;
+                        }
                     }
                 }
             }
@@ -117,44 +163,56 @@ jump6:
     }
     if(p1==4)
     {
-        int k4;
-        naslovBrzoKucanje();
-        k4=meni1(p1);
-        if(k4==0)
-            goto jump;
+        if(kljucevi=fopen("trajanje_kljuca4.txt", "r"))
+        {
+            fclose(kljucevi);
+            goto skok4;
+        }
         else
         {
-skok4:
+
+            int k4;
             naslovBrzoKucanje();
-            int o4=meni2(p1);
-            if(o4==0)
-                goto skok4;
-            else if(o4==2)
+            k4=meni1(p1);
+            if(k4==0)
+                goto jump;
+            else
             {
-                bodoviCetvrtaIgra=cetvrtaIgra();
-                ukupnoBodovi+=bodoviCetvrtaIgra;
+skok4:
+                naslovBrzoKucanje();
+                int o4=meni2(p1);
+                if(o4==0)
+                    goto skok4;
+                else if(o4==1)
+                    goto jump;
+                else if(o4==2)
+                {
+                    bodoviCetvrtaIgra=cetvrtaIgra();
+                    ukupnoBodovi+=bodoviCetvrtaIgra;
+                }
             }
         }
     }
-    do
-    {
-        printf("Da li zelite da igrate neku drugu igru: (1/0)");
-        scanf("%s",p);
-        n1=ispravnostBroja(p);
+        do
+        {
+            printf("Da li zelite da igrate neku drugu igru: (1/0)");
+            scanf("%s",p);
+            n1=ispravnostBroja(p);
 
-    }
-    while(n1==0);
-    system("cls");
-    n1=atoi(p);
-    if(n1==1)
+        }
+        while(n1==0);
+        system("cls");
+        n1=atoi(p);
+        if(n1==1)
         {
             pamtiBodove(ukupnoBodovi);
             goto jump;
         }
-    else
-    {
-        pamtiBodove(ukupnoBodovi);
-        naslovPlayGround();
-        zadnjiIspis(ukupnoBodovi);
+        else
+        {
+            pamtiBodove(ukupnoBodovi);
+            naslovPlayGround();
+            zadnjiIspis(ukupnoBodovi);
+        }
     }
-}
+

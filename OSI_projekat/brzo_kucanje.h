@@ -11,4 +11,5 @@ void ispisNivoa(int ,int );
 char generatorStringa();
 int cetvrtaIgra();
 
+
 #endif // BRZO_KUCANJE_H_INCLUDED
