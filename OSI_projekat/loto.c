@@ -1,4 +1,5 @@
 #include "loto.h"
+
 int *unos()     //funkcija za unos 7 brojeva
 {
 
@@ -8,12 +9,26 @@ int *unos()     //funkcija za unos 7 brojeva
     printf(" UNESITE 7 ZELJENIH BROJEVA U OPSEGU OD 1 DO 45:\n\n");
     do
     {
-        int i,l=1;
+        int i,l=1,slovo;
         char c[100];
         printf(" %d. broj:",n+1);
         scanf("%s",&c);
+        if(strlen(c)>=2)//provjera da li je upisan broj pa slovo
+        {
+            if(strlen(c)==2)
+            if(isdigit(c[1]))
+                slovo=1;
+            else{
+            if(isdigit(c[2])){
+                slovo=1;}
+            else slovo=0;}
+        }
+        if(strlen(c)==1)
+        {
+            slovo=1;
+        }
         k=atoi(c);
-        if(k>0 && k<=45)    //provjera da li je broj u opsegu
+        if((k>0 && k<=45)&&(slovo==1))    //provjera da li je broj u opsegu
         {
             for( i=0; i<n; i++)
                 if(niz[i]==k)   //provjera da li broj vec postoji
