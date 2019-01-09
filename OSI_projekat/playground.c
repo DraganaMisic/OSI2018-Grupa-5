@@ -8,6 +8,8 @@ void PlayGround()
     FILE *kljucevi;
     system("COLOR 71");
     char n[20],p[20];
+    FILE *fp;
+    int prva=0,druga=0,treca=0,cetvrta=0;
     registracija();
     int bodoviPrvaIgra=0,bodoviDrugaIgra,bodoviTrecaIgra,bodoviCetvrtaIgra,ukupnoBodovi=10,n1,p1;
     FILE *kljuc1,*kljuc2,*kljuc3,*kljuc4;
@@ -49,7 +51,7 @@ jump:
 skok1:
 
                 naslov();
-                int o=meni2(p1);
+                int o=meni2(p1,"trajanje_kljuca1.txt");
                 if(o==0)
                     goto skok1;
                 if(o==1)
@@ -85,7 +87,7 @@ skok1:
 skok2:
 
                 naslovKviz();
-                int o1=meni2(p1);
+                int o1=meni2(p1,"trajanje_kljuca2.txt");
                 if(o1==0)
                     goto skok2;
                 else if(o1==1)
@@ -118,7 +120,7 @@ skok2:
             {
 skok3:
                 okvir();
-                int o2=meni2(p1);
+                int o2=meni2(p1,"trajanje_kljuca3.txt");
                 if(o2==0)
                     goto skok3;
                 else if(o2==1)
@@ -180,7 +182,7 @@ jump6:
             {
 skok4:
                 naslovBrzoKucanje();
-                int o4=meni2(p1);
+                int o4=meni2(p1,"trajanje_kljuca4.txt");
                 if(o4==0)
                     goto skok4;
                 else if(o4==1)
@@ -193,26 +195,26 @@ skok4:
             }
         }
     }
-        do
-        {
-            printf("Da li zelite da igrate neku drugu igru: (1/0)");
-            scanf("%s",p);
-            n1=ispravnostBroja(p);
+    do
+    {
+        printf("Da li zelite da igrate neku drugu igru: (1/0)");
+        scanf("%s",p);
+        n1=ispravnostBroja(p);
 
-        }
-        while(n1==0);
-        system("cls");
-        n1=atoi(p);
-        if(n1==1)
-        {
-            pamtiBodove(ukupnoBodovi);
-            goto jump;
-        }
-        else
-        {
-            pamtiBodove(ukupnoBodovi);
-            naslovPlayGround();
-            zadnjiIspis(ukupnoBodovi);
-        }
     }
+    while(n1==0);
+    system("cls");
+    n1=atoi(p);
+    if(n1==1)
+    {
+        pamtiBodove(ukupnoBodovi);
+        goto jump;
+    }
+    else
+    {
+        pamtiBodove(ukupnoBodovi);
+        naslovPlayGround();
+        zadnjiIspis(ukupnoBodovi);
+    }
+}
 

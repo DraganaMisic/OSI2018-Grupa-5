@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include <windows.h>
 #include<time.h>
-
+#include <string.h>
 int ucitajBodove();
 int ispravnostBroja(char *);
 void pamtiBodove(int);
@@ -15,6 +15,7 @@ int ucitajBodove();
 void ispisi();
 void generisanje_kljuceva(FILE *, FILE *, FILE *, FILE *);
 void upisi_vrijeme(char *, int );
+long long razlika_vremena(char *,char *);
 //void uporedi_vrijeme();
 #endif // POMOCNE_FUNKCIJE_H_INCLUDED
 

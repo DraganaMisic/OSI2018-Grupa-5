@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1546101726 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\main.c
+1547022340 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\main.c
 	<stdio.h>
 	"meni.h"
 	"playground.h"
 
-1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.h
+1546725989 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -19,9 +19,10 @@
 	<windows.h>
 	<conio.h>
 
-1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\meni.h
+1547030440 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\meni.h
 	<stdio.h>
 	<windows.h>
+	<time.h>
 
 1546085329 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\meni.c
 	"meni.h"
@@ -32,11 +33,12 @@
 	"registracija.h"
 	"meni.h"
 
-1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.h
+1547027556 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<time.h>
+	<string.h>
 
 1546085533 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.c
 	"loto.h"
@@ -47,7 +49,7 @@
 	"meni.h"
 	"windows.h"
 
-1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.h
+1546588080 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.h
 	<stdio.h>
 	<time.h>
 	<windows.h>
@@ -61,48 +63,50 @@
 	"registracija.h"
 	"meni.h"
 
-1546102218 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\kviz.h
+1546725989 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\kviz.h
 	<stdio.h>
 	<time.h>
 	<windows.h>
+	<math.h>
 
-1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\registracija.h
+1546725989 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\registracija.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 
-1546101954 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\playground.h
+1546725989 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\playground.h
 	<stdio.h>
 	<windows.h>
 
-1545392666 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.c
+1547022340 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"pomocne_funkcije.h"
+	"brzo_kucanje.h"
 
-1546098086 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.c
+1547038397 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\loto.c
 	"loto.h"
 
-1546102218 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\playground.c
+1547030096 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\playground.c
 	"playground.h"
 	"meni.h"
 	"pomocne_funkcije.h"
 
-1546098746 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.c
+1546796536 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.c
 	"pogodi_broj.h"
-	"pomocne_funkcije.h"
 
-1546099181 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\registracija.c
+1546795375 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\registracija.c
 	"registracija.h"
-	"pomocne_funkcije.h"
+
+1547031051 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\meni.c
 	"meni.h"
 
-1546101954 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\meni.c
-	"meni.h"
-	"pomocne_funkcije.h"
-
-1546102218 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\kviz.c
+1546725989 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\kviz.c
 	"kviz.h"
-	"pomocne_funkcije.h"
 
-1546101806 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.c
+1547030096 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.c
 	"pomocne_funkcije.h"
 
 1545392666 source:c:\users\dasica\desktop\probni_projekat\osi_projekat\brzo_kucanje.c
@@ -426,85 +430,12 @@
 
 1546795105 shed changes
 
-1547022202 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.c
-	<stdio.h>
-	<stdlib.h>
-	<time.h>
-	<windows.h>
-	"pomocne_funkcije.h"
-	"brzo_kucanje.h"
+1547022340 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.h
 
-1547022202 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.h
-	<stdio.h>
-	<stdlib.h>
-	<windows.h>
-	<time.h>
-
-1547022202 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.h
-
-1546698024 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\kviz.c
-	"kviz.h"
-
-1546650777 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\kviz.h
-	<stdio.h>
-	<time.h>
-	<windows.h>
-	<math.h>
-
-1546698037 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\loto.c
-	"loto.h"
-
-1546101954 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\loto.h
-	<stdio.h>
-	<stdlib.h>
-	<time.h>
-	<windows.h>
-
-1546607268 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\main.c
-	<stdio.h>
-	"meni.h"
-	"playground.h"
-
-1547022202 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\meni.h
-	<stdio.h>
-	<windows.h>
-
-1546101954 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\playground.h
-	<stdio.h>
-	<windows.h>
-
-1547022202 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\meni.c
-	"meni.h"
-
-1547030437 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\playground.c
-	"playground.h"
-	"meni.h"
-	"pomocne_funkcije.h"
-
-1547028878 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.c
-	"pogodi_broj.h"
-
-1546105262 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.h
-	<stdio.h>
-	<time.h>
-	<windows.h>
-	<stdlib.h>
-
-1547024214 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.c
-	"pomocne_funkcije.h"
-
-1547026400 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\registracija.c
-	"registracija.h"
-
-1546101954 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\registracija.h
-	<stdio.h>
-	<stdlib.h>
-	<windows.h>
-
-1546703103 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\statistika.c
+1546725989 source:c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\statistika.c
 	"statistika.h"
 
-1546696847 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\statistika.h
+1546725989 c:\users\win10\desktop\osi2018-grupa-5\osi_projekat\statistika.h
 	<stdio.h>
 	<windows.h>
 	<time.h>

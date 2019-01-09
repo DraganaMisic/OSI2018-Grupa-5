@@ -188,8 +188,8 @@ void upisi_vrijeme(char *naziv_datoteke, int i)
     //redni_brojevi[i-1]=i;
     fp=fopen("otkljucane_igre.txt", "a");
     {
-       // for(int j=0; j<4; j++)
-            fprintf(fp, "%d ",i);
+        // for(int j=0; j<4; j++)
+        fprintf(fp, "%d ",i);
     }
     fclose(fp);
 }
@@ -245,7 +245,7 @@ int otkljucavanje(int broj_igre)
     {
         fp=fopen("kljucevi1s.txt", "r");
         if(provjera_kljuca("kljucevi1s.txt"))
-            printf("Unijeli ste validan kljuc.");
+            printf("Unijeli ste validan kljuc.",3);
         fclose(fp);
         Sleep(1000);
         system("cls");
@@ -282,3 +282,45 @@ void pamtiBodove(int ukupnoBodovi)
         //return 0;
     }
 }
+long long razlika_vremena(char *buf1,char *buf2)
+{
+    char prvo[6][5],drugo[6][5];
+    int j=0,k=0;
+    for(int i=0; i<20; i++)
+    {
+        //
+        if(buf1[i]=='.' || (buf1[i]==' ' && buf1[i+1]==' ') || buf1[i]==':')
+        {
+            prvo[j][k]=drugo[j][k]='\0';
+            j++;
+            k=0;
+        }
+        else if(buf1[i]==' ')
+        {
+            k=0;
+        }
+        else
+        {
+            prvo[j][k]=buf1[i];
+            drugo[j][k++]=buf2[i];
+        }
+    }
+    struct tm prvo_vrijeme= {0},drugo_vrijeme= {0};
+    prvo_vrijeme.tm_mday=atoi(prvo[0]);
+    prvo_vrijeme.tm_mon=atoi(prvo[1]);
+    prvo_vrijeme.tm_year=atoi(prvo[2])-1900;
+    prvo_vrijeme.tm_hour=atoi(prvo[3]);
+    prvo_vrijeme.tm_min=atoi(prvo[4]);
+    prvo_vrijeme.tm_sec=atoi(prvo[5]);
+    drugo_vrijeme.tm_mday=atoi(drugo[0]);
+    drugo_vrijeme.tm_mon=atoi(drugo[1]);
+    drugo_vrijeme.tm_year=atoi(drugo[2])-1900;
+    drugo_vrijeme.tm_hour=atoi(drugo[3]);
+    drugo_vrijeme.tm_min=atoi(drugo[4]);
+    drugo_vrijeme.tm_sec=atoi(drugo[5]);
+    long long c;
+    //printf("%d ",prvo_vrijeme.tm_sec);
+    c=difftime(mktime(&prvo_vrijeme),mktime(&drugo_vrijeme));
+    printf("%lld",c);
+}
+

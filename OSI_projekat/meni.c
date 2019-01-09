@@ -14,7 +14,7 @@ void ispis_opcija()
     printf("1 - Povratak nazad\n");
     printf("2 - Povratak na meni za izbor igre\n");
 }
-int meni2(int x)
+int meni2(int x,char *naziv_datoteke)
 {
 
     int p;
@@ -33,6 +33,33 @@ int meni2(int x)
     p=atoi(n);
     if(p==1)
     {
+        FILE *fp=fopen(naziv_datoteke,"r");
+        char staro_vrijeme[30]= {0},novo_vrijeme[30]= {0};
+        fscanf(fp,"%s",staro_vrijeme);
+        time_t t = time(NULL);
+        struct tm *ptm = localtime(&t);
+        strftime(novo_vrijeme, sizeof(novo_vrijeme), "%d.%m.%Y  %H.%M.%S", ptm);
+        long long proteklo_vrijeme=razlika_vremena(novo_vrijeme,staro_vrijeme);
+        if(x==1)
+            if(proteklo_vrijeme>7*24*3600)
+            {
+                naslovPlayGround();
+                printf("\nIgrica je istekla!");
+                Sleep(1000);
+                return 0;
+            }
+            else
+                return 2;
+        else if(x==2)
+            if(proteklo_vrijeme>24*3600)
+            {
+                naslovPlayGround();
+                printf("\nIgrica je istekla!");
+                Sleep(1000);
+                return 0;
+            }
+            else
+                return 2;
         system("cls");
         return 2;
     }
