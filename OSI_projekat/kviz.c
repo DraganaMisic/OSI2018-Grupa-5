@@ -1,34 +1,30 @@
 #include "kviz.h"
-#define ANSI_COLOR_CYAN    "\x1b[36m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
 
 void naslovKviz()
 {
-    ispisi();
-    printf(ANSI_COLOR_CYAN"                                                     KVIZ\n"ANSI_COLOR_RESET );
-    ispisi();
-    printf("\n");
-}
-int kontrolaBodova()
-{
-    if (izgubljeniBodovi>osvojeniBodovi+0.4*osvojeniBodovi) return 1;
-    else return 0;
+    printf("=======================================================================================================================\n");
+    printf("                                            <<<     K V I Z       >>>\n");
+    printf("=======================================================================================================================\n");
 }
 
-int pretragaPitanja(int niz[],int kljuc)
+int pretragaPitanja(int niz[],int kljuc) //provjera da li je pitanje sa datim rednim brojem(kljuc) vec postavljeno
 {
     int i;
     for (i=0;i<5;i++)
         if (niz[i]==kljuc) return 1;
     return 0;
 }
-int pitaj()
+int kontrolaBodova() //provjera odnosa osvojenih i izgubljenih bodova
 {
-
-    FILE *fp;
+    if (izgubljeniBodovi>osvojeniBodovi+0.4*osvojeniBodovi) return 1;
+    else return 0;
+}
+void pitaj()
+{
+  FILE *fp;
   time_t t; //za random broj
   srand((unsigned) time(&t)); //za random broj
-  int brPitanja,rezim,x;
+  int brPitanja,rezim,x;//brPitanja-potrebno jer broj pitanja nije isti u obe datoteke
   static int lagana[5]={0},teska[5]={0},brLaganih=0,brTeskih=0; //potrebno jer broj pitanja nije isti u obe datoteke
   if (kontrolaBodova())
   {
@@ -41,20 +37,21 @@ int pitaj()
     {
         fp=fopen("teskapitanja.txt","r");
         rezim=0;
-        brPitanja=90;                   //broj pitanja u ovoj datoteci
+        brPitanja=90; //broj pitanja u ovoj datoteci
     }
 
     if (fp  != NULL)
     {
-           if (rezim==1)
+           if (rezim==1) //lagana pitanja
     {
+        //generisanje random broja sve dok ne bude razlicit od proslih:
         do
         {
            x=rand()%brPitanja+1;
         }while(pretragaPitanja(lagana,x));
         lagana[brLaganih++]=x;
     }
-    else
+    else //teska pitanja
     {
         do
         {
@@ -62,19 +59,20 @@ int pitaj()
         }while(pretragaPitanja(teska,x));
         teska[brTeskih++]=x;
 
-    }    //za random broj
+    }
         int broj;
         char s1[100],s2[100],s3[100],s4[100],odgovor[100],tacan[100];
       while (fscanf(fp,"%d.%[^\n]\n%[^\n]\n%[^\n]\n%[^\n]\n%s\n",&broj,s1,s2,s3,s4,tacan) != EOF) //formatirano citanje iz datoteke
         {
-           if (broj==x) //provjera rednog broja pitanja, tj da li je broj pronadjen u datoteci jednak random broju
+           if (broj==x) //pretrazivanje datog rednog broja
            {
+               //ispis pitanja i ponudjenih odgovora
                printf("%s\n",s1);
                printf(" 1. %s\n",s2);
                printf(" 2. %s\n",s3);
                printf(" 3. %s\n",s4);
 
-                do //kontrola unosa
+                do //unos odgovora i kontrola unosa
                 {
                     printf("\nVas odgovor je: (unesite redni broj odgovora)\n");
                     Sleep(2000);
@@ -101,19 +99,18 @@ int pitaj()
         }
       fclose(fp);
     }else printf("Greska prilikom otvaranja datoteke!");
-    return bodoviDrugaIgra;
 }
-int drugaIgra()
+
+void drugaIgra()
 {
-   bodoviDrugaIgra=0;
+    bodoviDrugaIgra=0;
     tacniOdgovori=0;
     system("cls");
-    jump6:
     naslovKviz();
-    printf("\n Broj bodova: %d",bodoviDrugaIgra);
+    printf("\n Broj bodova: %d",bodoviDrugaIgra); //ispis trenutnih bodova
     printf("\n\n");
     int i;
-    for (i=0;i<5;i++)
+    for (i=0;i<5;i++) //postavljanje 5 pitanja
     {
         system("cls");
         naslovKviz();
@@ -124,37 +121,17 @@ int drugaIgra()
     }
     system("cls");
     naslovKviz();
-    if (tacniOdgovori==5)
+    if (tacniOdgovori==5) //provjera da li je korisnih tacno odgovorio na sva pitanja
     {
         printf("Cestitamo! Tacno ste odgovori na svih 5 pitanja! Osvojili se dodatnih 50 bodova!\n");
         osvojeniBodovi+=50;
         bodoviDrugaIgra+=50;
     }
-    printf("\n Broj bodova: %d",bodoviDrugaIgra);
-    if (bodoviDrugaIgra<0) printf("\nU ovoj igri ste izgubili %d bodova!",bodoviDrugaIgra);
+    //printf("\n Broj bodova: %d",bodoviDrugaIgra);
+    if (bodoviDrugaIgra<0) printf("\nU ovoj igri ste izgubili %d bodova!",bodoviDrugaIgra*(-1));
     else printf("\nU ovoj igri ste dobili %d bodova!",bodoviDrugaIgra);
-    dodajStatistika("2", bodoviDrugaIgra);
-
-    char c3[20];
-    int p3;
-    do
-    {
-        printf("\nDa li zelite ponovo da igrate ovu igru ? (1/0)\n");
-        scanf("%s",c3);
-        p3=ispravnostBroja(c3);
-    }
-    while(p3==0);
-    p3=atoi(c3);
-    if(p3==1)
-    {
-        system("cls");
-        goto jump6;
-    }
-    else
-    return bodoviDrugaIgra;
-
+    dodajStatistika("2",bodoviDrugaIgra); //dodavanje osvojenih bodova u statistiku
 }
-void ispis(int bodoviDrugaIgra)
-{
-    printf("\nU ovoj igri ste osvojili %d bodova\n",bodoviDrugaIgra);
-}
+
+
+
