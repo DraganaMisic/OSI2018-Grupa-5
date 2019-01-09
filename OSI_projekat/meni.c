@@ -14,11 +14,9 @@ void ispis_opcija()
     printf("1 - Povratak nazad\n");
     printf("2 - Povratak na meni za izbor igre\n");
 }
-<<<<<<< Updated upstream
-int meni2(int x)
-=======
+
 int meni2(int broj_igre ,char *naziv_datoteke)
->>>>>>> Stashed changes
+
 {
 
     int p;
@@ -37,8 +35,6 @@ int meni2(int broj_igre ,char *naziv_datoteke)
     p=atoi(n);
     if(p==1)
     {
-<<<<<<< Updated upstream
-=======
 
         FILE *fp=fopen(naziv_datoteke,"r");
         char staro_vrijeme[256]= {0},novo_vrijeme[256]= {0};
@@ -80,7 +76,6 @@ int meni2(int broj_igre ,char *naziv_datoteke)
                 return 2;
         else if(broj_igre==4)
                 return 2;
->>>>>>> Stashed changes
         system("cls");
     }
     else if(p==2)

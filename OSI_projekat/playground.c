@@ -173,6 +173,7 @@ jump6:
                     else
                     {
                         ukupnoBodovi-=100;
+                        system("cls");
                         int *niz=unos();
                         int *niz1=generisanje_brojeva();
                         bodoviTrecaIgra=izvlacenje(niz,niz1);
