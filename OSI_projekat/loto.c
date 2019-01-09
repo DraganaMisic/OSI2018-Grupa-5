@@ -1,15 +1,11 @@
 #include "loto.h"
-<<<<<<< Updated upstream
 
-=======
-#include <ctype.h>
->>>>>>> Stashed changes
 int *unos()     //funkcija za unos 7 brojeva
 {
 
     okvir();
     int n=0,k,m=0;
-    int *niz=(int *)calloc(7, sizeof(int));
+    int *niz=(int *)calloc(7, sizeof(int));  //alociranje niza za smjestanje unesenih brojeva
     printf(" UNESITE 7 ZELJENIH BROJEVA U OPSEGU OD 1 DO 45:\n\n");
     do
     {
@@ -17,21 +13,14 @@ int *unos()     //funkcija za unos 7 brojeva
         char c[100];
         printf(" %d. broj:",n+1);
         scanf("%s",&c);
-<<<<<<< Updated upstream
         if(strlen(c)>=2)//provjera da li je upisan broj pa slovo
-=======
-        if(strlen(c)>=2)
->>>>>>> Stashed changes
         {
             if(strlen(c)==2)
             if(isdigit(c[1]))
                 slovo=1;
             else{
             if(isdigit(c[2])){
-<<<<<<< Updated upstream
-=======
                 printf("test\n");
->>>>>>> Stashed changes
                 slovo=1;}
             else slovo=0;}
         }
@@ -50,7 +39,7 @@ int *unos()     //funkcija za unos 7 brojeva
                     m=1;
                 }
             if(m==0)
-                niz[n++]=k;
+                niz[n++]=k;   //dodavanje elementa u niz
         }
         else
         {
@@ -93,13 +82,13 @@ int *generisanje_brojeva()      //funkcija koja generise 20 brojeva
     int n=0,br,k=0;
     do
     {
-        br=rand()%44+1;
+        br=rand()%44+1;    //izvlacenje nasumicnih brojeva
         for( i=0; i<n; i++)
             if(br==niz[i])   //provjera da li broj vec postoji
                 k=1;
         if(k==0)
         {
-            niz[n++]=br;
+            niz[n++]=br;     //smjestanje broja u niz
         }
         k=0;
     }
@@ -119,7 +108,7 @@ int izvlacenje(int *niz1,int *niz2)     //funkcija koja ispisuje na standardni i
             if(niz2[i]==niz1[j])
             {
                 br++;
-                bodovi+=br*k;
+                bodovi+=br*k;             //racunanje bodova
                 ispis2(niz1,niz2,brojac-1,niz2[i],br*k,bodovi);     //ispis kada se pogodi broj
                 Sleep(2000);
             }

@@ -345,7 +345,7 @@
 	<windows.h>
 	<time.h>
 
-1546803053 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.c
+1547066827 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -353,74 +353,77 @@
 	"pomocne_funkcije.h"
 	"brzo_kucanje.h"
 
-1546803885 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.h
+1547070078 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<time.h>
+	<string.h>
 
-1546796540 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.h
+1547051455 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.h
 
-1546725989 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\kviz.c
+1547051455 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\kviz.c
 	"kviz.h"
 
-1546725989 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\kviz.h
+1547051455 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\kviz.h
 	<stdio.h>
 	<time.h>
 	<windows.h>
 	<math.h>
 
-1546725989 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\loto.c
+1547068605 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\loto.c
 	"loto.h"
 
-1546725989 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\loto.h
+1547051455 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\loto.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<windows.h>
+	<ctype.h>
 
-1546725989 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\main.c
+1547051455 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\main.c
 	<stdio.h>
 	"meni.h"
 	"playground.h"
 
-1546801879 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\meni.h
+1547051455 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\meni.h
 	<stdio.h>
 	<windows.h>
+	<time.h>
 
-1546725989 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\playground.h
+1547051455 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\playground.h
 	<stdio.h>
 	<windows.h>
 
 1546801879 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\meni.c
 	"meni.h"
 
-1547021818 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\playground.c
+1547066827 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\playground.c
 	"playground.h"
 	"meni.h"
 	"pomocne_funkcije.h"
 
-1546796536 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.c
+1547051455 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.c
 	"pogodi_broj.h"
 
-1546588080 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.h
+1547051455 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.h
 	<stdio.h>
 	<time.h>
 	<windows.h>
 	<stdlib.h>
 
-1546795375 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\registracija.c
+1547066828 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\registracija.c
 	"registracija.h"
 
-1546725989 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\registracija.h
+1547051455 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\registracija.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 
-1546725989 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\statistika.c
+1547051455 source:c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\statistika.c
 	"statistika.h"
 
-1546725989 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\statistika.h
+1547051455 c:\users\dasica\desktop\osi2018-grupa-5\osi_projekat\statistika.h
 	<stdio.h>
 	<windows.h>
 	<time.h>

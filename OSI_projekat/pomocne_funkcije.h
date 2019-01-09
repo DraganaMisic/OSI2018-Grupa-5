@@ -17,6 +17,8 @@ void generisanje_kljuceva(FILE *, FILE *, FILE *, FILE *);
 void upisi_vrijeme(char *, int );
 long long razlika_vremena(char *,char *);
 void brisi_datoteke();
+void ispis_za_istek_kljuca();
+void otkazivanje_igre(char *);
 //void uporedi_vrijeme();
 #endif // POMOCNE_FUNKCIJE_H_INCLUDED
 

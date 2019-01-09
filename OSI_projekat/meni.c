@@ -33,22 +33,22 @@ int meni2(int broj_igre ,char *naziv_datoteke)
     }
     while(p==0);
     p=atoi(n);
-    if(p==1)
+    if(p==1)     //petlja u slucaju izbora Igranje igre iz menija
     {
 
-        FILE *fp=fopen(naziv_datoteke,"r");
+        FILE *fp=fopen(naziv_datoteke,"r");    //otvaranje datoteke sa upisanim vremenom otkljucavanja igre
         char staro_vrijeme[256]= {0},novo_vrijeme[256]= {0};
-        fgets(staro_vrijeme,256,fp);
+        fgets(staro_vrijeme,256,fp);    //uzimanje vremena iz datoteke
+        //dobijanje trenutnog vremena
         time_t t = time(NULL);
         struct tm *ptm = localtime(&t);
         strftime(novo_vrijeme, sizeof(novo_vrijeme), "%d.%m.%Y  %H:%M:%S", ptm);
-        long long proteklo_vrijeme=razlika_vremena(novo_vrijeme,staro_vrijeme);
+        long long proteklo_vrijeme=razlika_vremena(novo_vrijeme,staro_vrijeme); //racunanje razlike sadasnjeg
+                                                                                //i vremena otkljucavanja u sekundama
         if(broj_igre==1)
-            if(proteklo_vrijeme>20)
+            if(proteklo_vrijeme>7*24*3600)   //provjera da li je kljuc istekao
             {
-                printf("\nTrajanje kljuca za ovu igru je isteklo!");
-                Sleep(2000);
-                system("cls");
+                ispis_za_istek_kljuca();    //ispis odgovarajuce poruke
                 return 1;
             }
             else
@@ -56,9 +56,7 @@ int meni2(int broj_igre ,char *naziv_datoteke)
         else if(broj_igre==2)
             if(proteklo_vrijeme>24*3600)
             {
-                printf("\nTrajanje kljuca za ovu igru je isteklo!");
-                Sleep(2000);
-                system("cls");
+                ispis_za_istek_kljuca();
                 return 1;
             }
             else
@@ -66,10 +64,7 @@ int meni2(int broj_igre ,char *naziv_datoteke)
         else if(broj_igre==3)
             if(proteklo_vrijeme>3600)
             {
-
-                printf("\nTrajanje kljuca za ovu igru je isteklo!");
-                Sleep(2000);
-                system("cls");
+                ispis_za_istek_kljuca();
                 return 1;
             }
             else
@@ -78,43 +73,27 @@ int meni2(int broj_igre ,char *naziv_datoteke)
                 return 2;
         system("cls");
     }
-    else if(p==2)
+    else if(p==2)    //opcija u slucaju izbora Otkazivanje igre iz menija
     {
         FILE *fp;
         if(broj_igre==1)
         {
-            fp=fopen("otkazana1.txt", "w");
-            fclose(fp);
-            printf("Otkazali ste igru, vas kljuc je ponisten\n");
-        Sleep(2500);
-        system("cls");
+            otkazivanje_igre("otkazana1.txt");
             return 1;
         }
         if(broj_igre==2)
         {
-            fp=fopen("otkazana2.txt", "w");
-            fclose(fp);
-            printf("Otkazali ste igru, vas kljuc je ponisten\n");
-        Sleep(2500);
-        system("cls");
+            otkazivanje_igre("otkazana2.txt");
             return 1;
         }
         if(broj_igre==3)
         {
-            fp=fopen("otkazana3.txt", "w");
-            fclose(fp);
-            printf("Otkazali ste igru, vas kljuc je ponisten\n");
-        Sleep(2500);
-        system("cls");
+            otkazivanje_igre("otkazana3.txt");
             return 1;
         }
         if(broj_igre==4)
         {
-            fp=fopen("otkazana4.txt", "w");
-            fclose(fp);
-            printf("Otkazali ste igru, vas kljuc je ponisten\n");
-        Sleep(2500);
-        system("cls");
+           otkazivanje_igre("otkazana4.txt");
             return 1;
         }
     }

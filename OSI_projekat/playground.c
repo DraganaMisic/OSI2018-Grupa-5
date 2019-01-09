@@ -13,7 +13,7 @@ void PlayGround()
     registracija();
     int bodoviPrvaIgra=0,bodoviDrugaIgra,bodoviTrecaIgra,bodoviCetvrtaIgra,ukupnoBodovi=10,n1,p1;
     FILE *kljuc1,*kljuc2,*kljuc3,*kljuc4;
-    generisanje_kljuceva(kljuc1, kljuc2, kljuc3, kljuc4);
+    generisanje_kljuceva(kljuc1, kljuc2, kljuc3, kljuc4); //smjestanje kljuceva u datoteke
     int t=ucitajBodove();
     if(t!=10)
         ukupnoBodovi=ucitajBodove();
@@ -28,29 +28,29 @@ jump:
     while(n1==0);
     system("cls");
     p1=atoi(n);
-    if(p1==1)
+    if(p1==1)  //opcije u slucaju izbora prve igre
     {
-        if(otkazivanje=fopen("otkazana1.txt", "r"))
+        if(otkazivanje=fopen("otkazana1.txt", "r"))  //provjera da li je igra otkazana
         {
             system("cls");
             fclose(otkazivanje);
-            prviIspis(ukupnoBodovi);
+            prviIspis(ukupnoBodovi);    //odgovrajuci ispis
             printf("Unesite redni broj igre koju zelite da igrate: \n\n");
             printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
             Sleep(2500);
             system("cls");
-            goto jump;
+            goto jump;  //prelazak na meni za izbor igre
         }
-        if(kljucevi=fopen("trajanje_kljuca1.txt","r"))
+        if(kljucevi=fopen("trajanje_kljuca1.txt","r")) //provjera da li je igra otkljucana
         {
             fclose(kljucevi);
-            goto skok1;
+            goto skok1;   //prekazak u Igra meni
         }
 
 
         else
         {
-
+            //prelazak u meni sa opcijom Unesi kljuc
             int k1;
             naslov();
             k1=meni1(p1);
@@ -79,9 +79,9 @@ skok1:
             }
         }
     }
-    if(p1==2)
+    if(p1==2)   //opcije u slucaju izbora druge igre
     {
-        if(otkazivanje=fopen("otkazana2.txt", "r"))
+        if(otkazivanje=fopen("otkazana2.txt", "r")) //provjera da li je igra otkazana
         {
             system("cls");
             fclose(otkazivanje);
@@ -92,7 +92,7 @@ skok1:
             system("cls");
             goto jump;
         }
-        if(kljucevi=fopen("trajanje_kljuca2.txt", "r"))
+        if(kljucevi=fopen("trajanje_kljuca2.txt", "r")) //provjera da li je igra otkljucana
         {
             fclose(kljucevi);
             goto skok2;
@@ -125,9 +125,9 @@ skok2:
         }
 
     }
-    if(p1==3)
+    if(p1==3) //opcije u slucaju izbora trece igre
     {
-        if(otkazivanje=fopen("otkazana3.txt", "r"))
+        if(otkazivanje=fopen("otkazana3.txt", "r")) //provjera da li je igra otkazana
         {
             system("cls");
             fclose(otkazivanje);
@@ -136,9 +136,9 @@ skok2:
             printf("Otkazali ste ovo igru. Ne mozete joj vise pristupiti!\n");
             Sleep(2500);
             system("cls");
-            goto jump;
+            goto jump;  //prelazak na glavni meni
         }
-        if(kljucevi=fopen("trajanje_kljuca3.txt", "r"))
+        if(kljucevi=fopen("trajanje_kljuca3.txt", "r")) //provjera da li je igra otkljucana
         {
             fclose(kljucevi);
             goto skok3;
@@ -200,9 +200,9 @@ jump6:
             }
         }
     }
-    if(p1==4)
+    if(p1==4)  //opcije u slucaju izbora cetvrte igre
     {
-        if(otkazivanje=fopen("otkazana4.txt", "r"))
+        if(otkazivanje=fopen("otkazana4.txt", "r"))  //provjera da li je igra otkazana
         {
             system("cls");
             fclose(otkazivanje);
@@ -213,7 +213,7 @@ jump6:
             system("cls");
             goto jump;
         }
-        if(kljucevi=fopen("trajanje_kljuca4.txt", "r"))
+        if(kljucevi=fopen("trajanje_kljuca4.txt", "r")) //provjera da li je igra otkazana
         {
             fclose(kljucevi);
             goto skok4;
