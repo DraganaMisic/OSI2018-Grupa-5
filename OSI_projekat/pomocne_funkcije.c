@@ -245,11 +245,11 @@ int otkljucavanje(int broj_igre)
     {
         fp=fopen("kljucevi1s.txt", "r");
         if(provjera_kljuca("kljucevi1s.txt"))
-            printf("Unijeli ste validan kljuc.",3);
+            printf("Unijeli ste validan kljuc.");
         fclose(fp);
         Sleep(1000);
         system("cls");
-        upisi_vrijeme("trajanje_kljuca3",3);
+        upisi_vrijeme("trajanje_kljuca3.txt",3);
 
     }
     else

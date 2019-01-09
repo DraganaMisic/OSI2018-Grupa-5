@@ -45,7 +45,7 @@ int brojac_bodova(int pokusaj)     // Broji bodove
 int rezim1()  // Rezim koji radi u slucaju da igrac ne ulazi prvi put u igru
 {
     int suma_bodova = 0;
-    int niz_pokusaja[6]={150,150,150,150,150,150},i,k;
+    int niz_pokusaja[6]= {150,150,150,150,150,150},i,k;
     printf("Pogodite zamisljeni broj u intervalu od 0 do 100: \n");
     int p = generator();
     int broj;
@@ -89,67 +89,23 @@ jump:
 
 int rezim0()   // Rezim koji radi ako je igrac prvi put u igri i omogucava mu da osvoji 300 bodova za prva 3 pogadjanja broja
 {
-    int broj,n,k,t,k1;
+    int n,p,broj;
     int suma_bodova = 0;
     char c[20];
-    srand(time(NULL));
     printf("Pogodite zamisljeni broj u intervalu od 0 do 100: \n");
     do
     {
-        n=rand()%2;
-    }
-    while(n==0);
-    if(n==1)
-    {
-        do
+        printf("1. pokusaj: ");
+        broj=ucitaj_karakter();
+        if(broj==-1)
+            printf("Pogresan unos, pokusajte ponovo! \n");
+        else
         {
-            printf("1. pokusaj: ");
-            broj=ucitaj_karakter();
-            if(broj==-1)
-                printf("Pogresan unos, pokusajte ponovo! \n");
-            else
-            {
-                printf("Cestitamo, osvojili ste 100 bodova !\n");
-                suma_bodova+=100;
-            }
+            printf("Cestitamo, osvojili ste 100 bodova !\n");
+            suma_bodova+=100;
         }
-        while(broj < 0 || broj > 100);
     }
-    else if(n==2)
-    {
-        do
-        {
-            printf("1. pokusaj: ");
-            scanf("%s",c);
-            k=ispravnostBroja100(c);
-            t=atoi(c);
-            if(t==100)
-            {
-                printf("Zamisljeni broj je manji od unesenog !\n");
-                goto jump;
-            }
-            else if(t==0)
-            {
-                printf("Zamisljeni broj je veci od unesenog !\n");
-                goto jump;
-            }
-            else if(t!=100 && t!=0)
-            {
-                printf("Zamisljeni broj je veci od unesenog! \n");
-jump:
-                printf("2. pokusaj: ");
-                scanf("%s",c);
-                k1=ispravnostBroja100(c);
-                if(k1==1)
-                {
-                    printf("Cestitamo, osvojili ste 50 bodova !\n");
-                    suma_bodova+=50;
-                }
-            }
-
-        }
-        while(k==0 && k1==0);
-    }
+    while(broj < 0 || broj > 100);
     dodajStatistika("1", suma_bodova);
     return suma_bodova;
 }
@@ -163,11 +119,25 @@ void naslov()
 }
 int igranje()     // Glavna funkcija koja se poziva u mainu
 {
-    int rezim = 0, p = 1, br_igranja = 0,br_bodova=0;
-    char enter,c;
+    int rezim, p, br_igranja = 0,br_bodova=0,x=1,t;
+    char enter,c,m1;
+    FILE *fp;
+    char m[20]="1";
+    p=atoi(m);
+
     scanf("%c",&c);
     while(p)
     {
+        fp=fopen("rezim.txt","r");
+        if(fp)
+        {
+            rezim=1;
+            fclose(fp);
+        }
+        else
+        {
+            rezim=0;
+        }
         if(rezim == 0)
         {
             br_bodova += rezim0();
@@ -181,15 +151,24 @@ int igranje()     // Glavna funkcija koja se poziva u mainu
         }
         do
         {
-            printf("Da li zelite ponovo da igrate? (1/0) \n");
-            scanf("%d", &p);
+
+            printf("Da li zelite ponovo da igrate ovu igru? (1/0) \n");
+            scanf("%s", m);
+            p=atoi(m);
             if(p<0 || p>1)
                 printf("Pogresan unos, mozete unijeti samo 1 ili 0 !\n");
         }
         while(p<0 || p>1);
         scanf("%c",&enter);
-        if(br_igranja >= 3)
-            rezim = 1;
+
+        if(br_igranja == 3)
+        {
+            fp=fopen("rezim.txt","w");
+            if(fp)
+                fclose(fp);
+        }
+        if(br_igranja>=3)
+            rezim=1;
         else
             rezim = 0;
     }
