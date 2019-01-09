@@ -69,13 +69,15 @@ void registracija()
     FILE *fp,*fp1;
     char x[100],imeKorisnika[100]= {};
     char s1[]="10";
-    fp=fopen("korisnik.txt","r");
+    fp=fopen("korisnik.txt","r"); //otvaranje datoteke za citanje
     if (fp)
     {
-        while (fscanf(fp,"%s",x)!=EOF)
+        //prebrojavanje broja stringova u datoteci
+        while (fscanf(fp,"%s",x)!=EOF) //formatirano ucitavanje stringa,tj. imena korisnika ukoliko postoji
             brKaraktera++;
-        fclose(fp);
+        fclose(fp); //zatvaranje datoteke
     }
+    else printf("Greska pri otvaranju datoteke za citanje!");
     if (brKaraktera==0) //registracija, prazna datoteka
     {
          brisi_datoteke();
@@ -83,21 +85,21 @@ void registracija()
         if(t==1)
         {
             printf("\nDOBRODOSLI ! UNESITE VASE IME: ");
-            scanf(" %[^\t\n]s",imeKorisnika);
-            fp=fopen("korisnik.txt","w");
+            scanf(" %[^\t\n]s",imeKorisnika); //citanje imena korisnika(moguc unos vise rijeci)
+            fp=fopen("korisnik.txt","w"); //otvaranje datoteke za pisanje
             fp1=fopen("bodovi.txt","w");
             if (fp && fp1)
             {
                 fprintf(fp1,"%s",&s1);
-                fprintf(fp, "%s\n", &imeKorisnika);
-                fclose(fp);
+                fprintf(fp, "%s\n", &imeKorisnika); //formatirano pisanje u datoteku
+                fclose(fp); //zatvaranje datoteke
                 fclose(fp1);
             }
             Sleep(1200);
             printf("\n");
             printf("Uspjesno ste se registrovali na nasu platformu !\n");
             Sleep(2500);
-            system("cls");
+            system("cls"); //brisanje ekrana
         }
         else
         {
@@ -111,7 +113,7 @@ void registracija()
     {
 
         fp=fopen("korisnik.txt","r");
-        while(fscanf(fp,"%s",x)!=EOF)
+        while(fscanf(fp,"%s",x)!=EOF) //formatirano citanje stringa(do razmaka)
         {
             strcat(imeKorisnika,x);
             strcat(imeKorisnika," ");

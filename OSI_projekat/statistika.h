@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <time.h>
-typedef struct
+typedef struct //korisnicki definisan tip, struktura DATUM
 {
     int dan;
     int mjesec;
