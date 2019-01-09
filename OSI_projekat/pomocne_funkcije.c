@@ -323,4 +323,29 @@ long long razlika_vremena(char *buf1,char *buf2)
     c=difftime(mktime(&prvo_vrijeme),mktime(&drugo_vrijeme));
     return c;
 }
+void brisi_datoteke()
+{
+    remove("kljucevi1d.txt");
+    remove("kljucevi1s.txt");
+    remove("kljucevi7d.txt");
+    remove("kljucevineograniceno.txt");
+    remove("trajanje_kljuca1.txt");
+    remove("trajanje_kljuca2.txt");
+    remove("trajanje_kljuca3.txt");
+    remove("trajanje_kljuca4.txt");
+    remove("statistika1.txt");
+    remove("statistika2.txt");
+    remove("statistika3.txt");
+    remove("statistika4.txt");
+    remove("rezim.txt");
+    remove("csv1.csv");
+    remove("csv2.csv");
+    remove("csv3.csv");
+    remove("csv4.csv");
+    remove("otkazana1.txt");
+      remove("otkazana2.txt");
+        remove("otkazana3.txt");
+          remove("otkazana4.txt");
+          remove("otkljucane_igre.txt");
+}
 

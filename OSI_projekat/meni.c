@@ -339,7 +339,6 @@ int meni2(int broj_igre ,char *naziv_datoteke)
 }
 int meni1(int broj_igre)
 {
-    printf("broj=%d ", broj_igre);
     Sleep(2500);
     int p;
     char n[20];

@@ -448,7 +448,7 @@
 	"pomocne_funkcije.h"
 	"brzo_kucanje.h"
 
-1547027556 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\pomocne_funkcije.h
+1547050852 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\pomocne_funkcije.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -490,10 +490,10 @@
 	<stdio.h>
 	<windows.h>
 
-1547049039 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\meni.c
+1547051132 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\meni.c
 	"meni.h"
 
-1547048209 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\playground.c
+1547049797 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\playground.c
 	"playground.h"
 	"meni.h"
 	"pomocne_funkcije.h"
@@ -507,10 +507,10 @@
 	<windows.h>
 	<stdlib.h>
 
-1547048209 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\pomocne_funkcije.c
+1547051044 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\pomocne_funkcije.c
 	"pomocne_funkcije.h"
 
-1547048209 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\registracija.c
+1547050895 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\registracija.c
 	"registracija.h"
 
 1546725989 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\registracija.h

@@ -78,6 +78,7 @@ void registracija()
     }
     if (brKaraktera==0) //registracija, prazna datoteka
     {
+         brisi_datoteke();
         int t=meniRegistracija1();
         if(t==1)
         {
