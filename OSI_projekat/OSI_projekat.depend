@@ -529,3 +529,89 @@
 	<windows.h>
 	<time.h>
 
+1547129549 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"pomocne_funkcije.h"
+	"brzo_kucanje.h"
+
+1547132572 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+	<string.h>
+
+1547128938 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\brzo_kucanje.h
+
+1547131831 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\kviz.c
+	"kviz.h"
+
+1547130592 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\kviz.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<math.h>
+
+1547128938 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\loto.c
+	"loto.h"
+
+1547128938 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\loto.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<ctype.h>
+
+1547128938 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\main.c
+	<stdio.h>
+	"meni.h"
+	"playground.h"
+
+1547135751 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\meni.h
+	<stdio.h>
+	<windows.h>
+	<time.h>
+
+1547128938 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\playground.h
+	<stdio.h>
+	<windows.h>
+
+1547136868 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\meni.c
+	"meni.h"
+
+1547136796 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\playground.c
+	"playground.h"
+	"meni.h"
+	"pomocne_funkcije.h"
+
+1547136444 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.c
+	"pogodi_broj.h"
+
+1547129049 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\pogodi_broj.h
+	<stdio.h>
+	<time.h>
+	<windows.h>
+	<stdlib.h>
+
+1547132729 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\pomocne_funkcije.c
+	"pomocne_funkcije.h"
+
+1547135751 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\registracija.c
+	"registracija.h"
+
+1547128938 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\registracija.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1547132987 source:c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\statistika.c
+	"statistika.h"
+
+1547128938 c:\users\milos skobic\desktop\osi2018-grupa-5\osi_projekat\statistika.h
+	<stdio.h>
+	<windows.h>
+	<time.h>
+

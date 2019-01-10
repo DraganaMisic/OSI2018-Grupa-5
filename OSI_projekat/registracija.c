@@ -2,7 +2,7 @@
 
 int meniRegistracija1()
 {
-
+    printf("\n");
     printf("1. Registracija\n");
     printf("2. Izlaz\n");
     char c[20];
@@ -34,6 +34,7 @@ int meniRegistracija1()
 int meniRegistracija2()
 {
     naslovPlayGround();
+    printf("\n");
     printf("1. Igraj igre\n");
     printf("2. Izlaz\n");
     char c[20];
@@ -128,7 +129,6 @@ void registracija()
         {
 
             fclose(fp);
-            //Sleep(1000);
             system("cls");
         }
         else
@@ -137,7 +137,7 @@ void registracija()
             Sleep(1000);
             system("cls");
         }
-        // return 1;
+
 
     }
 

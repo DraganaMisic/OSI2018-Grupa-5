@@ -2,6 +2,7 @@
 #include "meni.h"
 #include "pomocne_funkcije.h"
 
+//Glavna funkcija u kojoj se pozivaju sve ostale funkcije i koja se poziva u mainu
 
 void PlayGround()
 {
@@ -18,12 +19,12 @@ void PlayGround()
     if(t!=10)
         ukupnoBodovi=ucitajBodove();
 jump:
-    prviIspis(ukupnoBodovi);
+    prviIspis(ukupnoBodovi); // pocetni ispis menija za izbor igre
     do
     {
         printf("Unesite redni broj igre koju zelite da igrate: ");
         scanf("%s",n);
-        n1=ispravnostBroja(n);
+        n1=ispravnostBroja4(n); // provjerava da li smo unijeli validnu opciju
     }
     while(n1==0);
     system("cls");
@@ -55,7 +56,7 @@ jump:
             naslov();
             k1=meni1(p1);
             if(k1==0)
-                goto jump;
+                goto jump; // vrati nas na meni za izbor igre ukoliko to izaberemo u igra meniju
 
             else
             {
@@ -166,6 +167,7 @@ skok3:
 jump6:
                     if(ukupnoBodovi<100)
                     {
+                        system("cls");
                         okvir();
                         printf("Nemate dovoljno bodova da pocnete igru !");
                         Sleep(2000);

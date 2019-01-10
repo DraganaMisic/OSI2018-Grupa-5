@@ -1,4 +1,6 @@
 #include "pomocne_funkcije.h"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
 int ucitajBodove()
 {
     FILE *fp;
@@ -70,7 +72,22 @@ int ispravnostBroja(char *n)
         printf("Pogresan unos, unesite ponovo !");
         return 0;
     }
-    if(n[0]>='0' && n[0]<='4')
+    if(n[0]>='1' && n[0]<='5')
+        return 1;
+    else
+    {
+        printf("Pogresan unos, unesite ponovo !");
+        return 0;
+    }
+}
+int ispravnostBroja4(char *n)
+{
+    if (n[1]!='\0')
+    {
+        printf("Pogresan unos, unesite ponovo !");
+        return 0;
+    }
+    if(n[0]>='1' && n[0]<='4')
         return 1;
     else
     {
@@ -222,7 +239,7 @@ int otkljucavanje(int broj_igre)
         if(provjera_kljuca("kljucevi7d.txt"))
             printf("Unijeli ste validan kljuc. Igra je otkljucana na 7 dana.\n");
         fclose(fp);
-        Sleep(1000);
+        Sleep(2000);
         system("cls");
         upisi_vrijeme("trajanje_kljuca1.txt",1);
 
@@ -235,7 +252,7 @@ int otkljucavanje(int broj_igre)
         if(provjera_kljuca("kljucevi1d.txt"))
             printf("Unijeli ste validan kljuc. Igra je otkljucana na 1 dan.");
         fclose(fp);
-        Sleep(1000);
+        Sleep(2000);
         system("cls");
         upisi_vrijeme("trajanje_kljuca2.txt",2);
 
@@ -244,9 +261,9 @@ int otkljucavanje(int broj_igre)
     {
         fp=fopen("kljucevi1s.txt", "r");
         if(provjera_kljuca("kljucevi1s.txt"))
-            printf("Unijeli ste validan kljuc. Igra je otkljucana na 1 sat.",3);
+            printf("Unijeli ste validan kljuc. Igra je otkljucana na 1 sat.");
         fclose(fp);
-        Sleep(1000);
+        Sleep(2000);
         system("cls");
         upisi_vrijeme("trajanje_kljuca3.txt",3);
 
@@ -255,9 +272,9 @@ int otkljucavanje(int broj_igre)
     {
         fp=fopen("kljucevineograniceno.txt", "r");
         if(provjera_kljuca("kljucevineograniceno.txt"))
-            printf("Unijeli ste validan kljuc.");
+            printf("Unijeli ste validan kljuc. Igra je otkljucana na neogranicen period.");
         fclose(fp);
-        Sleep(1000);
+        Sleep(2000);
         system("cls");
         upisi_vrijeme("trajanje_kljuca4.txt",4);
 
@@ -347,6 +364,7 @@ void brisi_datoteke()
         remove("otkazana3.txt");
           remove("otkazana4.txt");
           remove("otkljucane_igre.txt");
+          remove("pamcenjerezima.txt");
 }
 void ispis_za_istek_kljuca()
 {
@@ -363,4 +381,28 @@ void otkazivanje_igre(char *naziv_datoteke)
     printf("Otkazali ste igru, vas kljuc je ponisten\n");
     Sleep(2500);
     system("cls");
+}
+void prviIspis(int ukupnoBodovi)
+{
+    naslovPlayGround();
+    printf("\n");
+    printf("Bodovi: %d\n\n",ukupnoBodovi);
+    printf("          IGRE\n\n");
+    printf("1. Pogodi zamisljeni broj\n");
+    printf("2. Kviz\n");
+    printf("3. Loto (ulog 100 bodova)\n");
+    printf("4. Brzo kucanje\n\n");
+
+}
+
+void zadnjiIspis(int ukupnoBodovi)
+{
+    printf("KONACNI BROJ BODOVA: %d\n",ukupnoBodovi);
+}
+void naslovPlayGround()
+{
+
+    printf("=======================================================================================================================\n");
+    printf(ANSI_COLOR_CYAN"                                            <<< P L A Y G R O U N D >>>\n"ANSI_COLOR_RESET);
+    printf("=======================================================================================================================\n");
 }

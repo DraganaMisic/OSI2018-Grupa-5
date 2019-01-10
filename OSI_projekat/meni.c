@@ -6,7 +6,7 @@
 #define ANSI_COLOR_MAGENTA "\x1b[35m"
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
-void ispis_opcija()
+void ispis_opcija() //ispis opcija koje se prikazu nakon pregleda statistike ili cuvanja u csv
 {
 
     printf("\n");
@@ -15,21 +15,22 @@ void ispis_opcija()
     printf("2 - Povratak na meni za izbor igre\n");
 }
 
-int meni2(int broj_igre ,char *naziv_datoteke)
+int meni2(int broj_igre ,char *naziv_datoteke) // meni koji se prikazuje ukoliko je igra otkljucana
 
 {
 
     int p;
     char n[20];
-    printf("Izaberite opciju koju zelite ! (1/2/3/4)\n");
+    printf("Izaberite opciju koju zelite ! \n");
     printf("1. Igranje igre\n");
     printf("2. Otkazivanje igre\n");
     printf("3. Pregled statistike\n");
     printf("4. Cuvanje rezultata u CSV fajl\n");
+    printf("5. Povratak na meni za izbor igre\n");
     do
     {
         scanf("%s",n);
-        p=ispravnostBroja(n);
+        p=ispravnostBroja(n); // provjerava da li smo unijeli nesto sto je van opsega ili neki drugi karakter
     }
     while(p==0);
     p=atoi(n);
@@ -49,7 +50,7 @@ int meni2(int broj_igre ,char *naziv_datoteke)
             if(proteklo_vrijeme>7*24*3600)   //provjera da li je kljuc istekao
             {
                 ispis_za_istek_kljuca();    //ispis odgovarajuce poruke
-                return 1;
+                return 1;                       //radi na istom principu za ostale 3 igre
             }
             else
                 return 2;
@@ -75,7 +76,31 @@ int meni2(int broj_igre ,char *naziv_datoteke)
     }
     else if(p==2)    //opcija u slucaju izbora Otkazivanje igre iz menija
     {
+        system("cls");
+        //ispiivanje odgovarajucih naslova
+        if(broj_igre==1)
+            naslov();
+        else if(broj_igre==2)
+            naslovKviz();
+        else if(broj_igre==3)
+            okvir();
+        else if(broj_igre==4)
+            naslovBrzoKucanje();
+        printf("Da li ste sigurni da zelite otkazati igru, vise joj necete moci pristupiti !\n"); //potvrdjivanje izbora
+        printf("1 - Da\n");
+        printf("2 - Ne\n");
+        printf("Unesite vas izbor:");
+        char izbor[20];
+        int o;
+        do
+        {
+         scanf("%s",izbor);
+         o=ispravnostBroja2(izbor); //provjera da li je korektan unos
+        }while(o==0);
+        o=atoi(izbor);
+        if(o==1){
         FILE *fp;
+        //otkazivanje za svaku igru pojedinacno
         if(broj_igre==1)
         {
             otkazivanje_igre("otkazana1.txt");
@@ -96,10 +121,13 @@ int meni2(int broj_igre ,char *naziv_datoteke)
            otkazivanje_igre("otkazana4.txt");
             return 1;
         }
+        }
+        else {system("cls");return 1;}
     }
 
-    else if(p==3)
+    else if(p==3)  //opcija u slucaju izbora Pregled Statistike
     {
+        //petlje za svaku igru pojedinacno
         if(broj_igre==1)
         {
             system("cls");
@@ -107,9 +135,10 @@ int meni2(int broj_igre ,char *naziv_datoteke)
             prikazStatistike("1");
             char c1[20];
             int p1;
+            ispis_opcija();
             do
             {
-                ispis_opcija();
+
                 scanf("%s",c1);
                 p1=ispravnostBroja2(c1);
             }
@@ -133,9 +162,10 @@ int meni2(int broj_igre ,char *naziv_datoteke)
             prikazStatistike("2");
             char c2[20];
             int p2;
+            ispis_opcija();
             do
             {
-                ispis_opcija();
+
                 scanf("%s",c2);
                 p2=ispravnostBroja2(c2);
             }
@@ -159,9 +189,10 @@ int meni2(int broj_igre ,char *naziv_datoteke)
             prikazStatistike("3");
             char c3[20];
             int p3;
+            ispis_opcija();
             do
             {
-                ispis_opcija();
+
                 scanf("%s",c3);
                 p3=ispravnostBroja2(c3);
             }
@@ -185,9 +216,10 @@ int meni2(int broj_igre ,char *naziv_datoteke)
             prikazStatistike("4");
             char c4[20];
             int p4;
+            ispis_opcija();
             do
             {
-                ispis_opcija();
+
                 scanf("%s",c4);
                 p4=ispravnostBroja2(c4);
             }
@@ -206,8 +238,9 @@ int meni2(int broj_igre ,char *naziv_datoteke)
 
         }
     }
-    else if(p==4)
+    else if(p==4) //opcije u slucaju izbora Cuvanje u CSV fajl
     {
+        //petlje za svaku igru pojedinacno
         if(broj_igre==1)
         {
             system("cls");
@@ -313,19 +346,26 @@ int meni2(int broj_igre ,char *naziv_datoteke)
             }
         }
     }
+    else if(p==5)  //opcije ako ste izabrali Nazad
+    {
+        system("cls");
+        return 1;
+    }
     system("cls");
 
 }
+//meni koji se pojavljuje prije otkljucavanja igre
 int meni1(int broj_igre)
 {
-    //Sleep(2500);
+
     int p;
     char n[20];
-    printf("Izaberite opciju koju zelite ! (1/2/3/4)\n");
+    printf("Izaberite opciju koju zelite !\n");
     printf("1. Unos kljuca\n");
     printf("2. Otkazivanje igre\n");
     printf("3. Pregled statistike\n");
     printf("4. Cuvanje rezultata u CSV fajl\n");
+    printf("5. Povratak na meni za izbor igre\n");
     do
     {
         scanf("%s",n);
@@ -334,14 +374,36 @@ int meni1(int broj_igre)
     while(p==0);
     p=atoi(n);
 
-    if(p==1)
+    if(p==1)  //opcije ako ste izabrali Unos kljuca
     {
         otkljucavanje(broj_igre);
 
     }
-    else if(p==2)
+    else if(p==2) //opcije ako ste izabrali Otkazivanje igre
     {
-
+        //funkcionise na isti nacin kao u meni1
+        system("cls");
+        if(broj_igre==1)
+            naslov();
+        else if(broj_igre==2)
+            naslovKviz();
+        else if(broj_igre==3)
+            okvir();
+        else if(broj_igre==4)
+            naslovBrzoKucanje();
+        printf("Da li ste sigurni da zelite otkazati igru, vise joj necete moci pristupiti !\n");
+        printf("1 - Da\n");
+        printf("2 - Ne\n");
+        printf("Unesite vas izbor:");
+        char izbor[20];
+        int o;
+        do
+        {
+         scanf("%s",izbor);
+         o=ispravnostBroja2(izbor);
+        }while(o==0);
+        o=atoi(izbor);
+        if(o==1){
         FILE *fp;
         if(broj_igre==1)
         {
@@ -366,19 +428,28 @@ int meni1(int broj_igre)
         printf("Otkazali ste igru, vas kljuc je ponisten\n");
         Sleep(2500);
         system("cls");
-        return 0;
+         return 0;
+        }
+        else
+            {system("cls");return 0;}
+
     }
     else if(p==3)
     {
-        printf("Ovu igru jos niste otkljucali, nemate zabiljezenih rezultata !\n");
+        printf("Igra nije otkljucana, ne mozete prikazati statistiku !\n");
         Sleep(3000);
         system("cls");
         return 0;
     }
     else if(p==4)
     {
-        printf("Ovu igru jos nista otkljucali, ne mozete sacuvati rezultate u CSV fajl !\n");
+        printf("Igra nije otkljucana, ne mozete sacuvati rezultate u CSV fajl !\n");
         Sleep(3000);
+        system("cls");
+        return 0;
+    }
+    else if(p==5)
+    {
         system("cls");
         return 0;
     }
@@ -386,27 +457,3 @@ int meni1(int broj_igre)
 
 }
 
-void prviIspis(int ukupnoBodovi)
-{
-    naslovPlayGround();
-    printf("\n");
-    printf("Bodovi: %d\n\n",ukupnoBodovi);
-    printf("          IGRE\n\n");
-    printf("1. Pogodi zamisljeni broj\n");
-    printf("2. Kviz\n");
-    printf("3. Loto (ulog 100 bodova)\n");
-    printf("4. Brzo kucanje\n\n");
-
-}
-
-void zadnjiIspis(int ukupnoBodovi)
-{
-    printf("KONACNI BROJ BODOVA: %d\n",ukupnoBodovi);
-}
-void naslovPlayGround()
-{
-
-    printf("=======================================================================================================================\n");
-    printf(ANSI_COLOR_CYAN"                                            <<< P L A Y G R O U N D >>>\n"ANSI_COLOR_RESET);
-    printf("=======================================================================================================================\n");
-}

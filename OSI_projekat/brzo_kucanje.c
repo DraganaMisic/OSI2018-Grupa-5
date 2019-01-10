@@ -92,6 +92,7 @@ int cetvrtaIgra()
     char* zadati_str = calloc(100, sizeof(char));
     char* uneseni_str;
     srand(time(0));
+    system("cls");
     for(int k = 1; k<=5; k++)
     {
         for(int i=0; i<br_karaktera; i++)

@@ -6,6 +6,7 @@
 #include <stdlib.h>
 int pretrazivanje_pokusaja(int* , int );
 int generator() ;
+int generatror1();
 int brojac_pokusaja(int niz[]);
 int brojac_bodova(int pokusaj);
 int rezim1() ;
@@ -13,6 +14,5 @@ int rezim0() ;
 void naslov();
 int igranje()  ;
 int ucitaj_karakter();
-
 
 #endif // POGODI_BROJ_H_INCLUDED

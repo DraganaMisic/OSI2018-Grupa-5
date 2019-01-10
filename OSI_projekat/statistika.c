@@ -110,6 +110,6 @@ void prikazStatistike(char *brIgre) //prikaz statistike zavisno od broja igre
         }
        fclose(fp); //zatvaranje datoteke
     }
-    else printf("Greska pri otvaranju datoteke za citanje!");
+    else printf("Nemate zabiljezenih rezultata!");
 }
 

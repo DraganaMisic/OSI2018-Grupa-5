@@ -160,17 +160,20 @@ void naslov()
     ispisi();
     printf("\n");
 }
-int igranje()     // Glavna funkcija koja se poziva u mainu
+int igranje()     // Glavna funkcija koja se poziva u PlayGround funkciji
 {
     int rezim, p, br_igranja = 0,br_bodova=0,x=1,t;
     char enter,c,m1;
-    FILE *fp;
+    FILE *fp,*fp1;
     char m[20]="1";
     p=atoi(m);
 
     scanf("%c",&c);
     while(p)
     {
+        fp1=fopen("pamcenjerezima.txt","r");
+        fscanf(fp1,"%d",&br_igranja);
+        fclose(fp1);
         fp=fopen("rezim.txt","r");
         if(fp)
         {
@@ -185,6 +188,9 @@ int igranje()     // Glavna funkcija koja se poziva u mainu
         {
             br_bodova += rezim0();
             br_igranja++;
+            fp1=fopen("pamcenjerezima.txt","w");
+            fprintf(fp1,"%d",br_igranja);
+            fclose(fp1);
 
         }
         else

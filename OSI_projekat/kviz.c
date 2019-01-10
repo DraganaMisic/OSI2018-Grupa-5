@@ -1,9 +1,11 @@
 #include "kviz.h"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
 
 void naslovKviz()
 {
     printf("=======================================================================================================================\n");
-    printf("                                            <<<     K V I Z       >>>\n");
+    printf(ANSI_COLOR_CYAN"                                                    K V I Z       \n"ANSI_COLOR_RESET);
     printf("=======================================================================================================================\n");
 }
 
@@ -19,7 +21,7 @@ int kontrolaBodova() //provjera odnosa osvojenih i izgubljenih bodova
     if (izgubljeniBodovi>osvojeniBodovi+0.4*osvojeniBodovi) return 1;
     else return 0;
 }
-void pitaj()
+int pitaj()
 {
   FILE *fp;
   time_t t; //za random broj
@@ -99,14 +101,17 @@ void pitaj()
         }
       fclose(fp);
     }else printf("Greska prilikom otvaranja datoteke!");
+
+    return bodoviDrugaIgra;
 }
 
-void drugaIgra()
+int drugaIgra()
 {
     bodoviDrugaIgra=0;
     tacniOdgovori=0;
     system("cls");
     naslovKviz();
+    jump6:;
     printf("\n Broj bodova: %d",bodoviDrugaIgra); //ispis trenutnih bodova
     printf("\n\n");
     int i;
@@ -128,9 +133,26 @@ void drugaIgra()
         bodoviDrugaIgra+=50;
     }
     //printf("\n Broj bodova: %d",bodoviDrugaIgra);
-    if (bodoviDrugaIgra<0) printf("\nU ovoj igri ste izgubili %d bodova!",bodoviDrugaIgra*(-1));
+    if (bodoviDrugaIgra<0) printf("\nU ovoj igri ste izgubili %d bodova!\n",(-1)*bodoviDrugaIgra);
     else printf("\nU ovoj igri ste dobili %d bodova!",bodoviDrugaIgra);
+    char c3[20];
+    int p3;
+    do//provjera da li korisnik zeli da ponovo igra igricu
+    {
+        printf("Da li zelite ponovo da igrate ovu igru ? (1/0)\n");
+        scanf("%s",c3);
+        p3=ispravnostBroja(c3);
+    }
+    while(p3==0);
+    p3=atoi(c3);
+    if(p3==1)
+    {
+        system("cls");
+
+        goto jump6;
+    }
     dodajStatistika("2",bodoviDrugaIgra); //dodavanje osvojenih bodova u statistiku
+    return bodoviDrugaIgra;
 }
 
 
