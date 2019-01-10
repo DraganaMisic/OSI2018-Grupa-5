@@ -9,7 +9,7 @@ int *unos()     //funkcija za unos 7 brojeva
     printf(" UNESITE 7 ZELJENIH BROJEVA U OPSEGU OD 1 DO 45:\n\n");
     do
     {
-        int i,l=1,slovo;
+        int i,l=1,slovo=0;
         char c[100];
         printf(" %d. broj:",n+1);
         scanf("%s",&c);

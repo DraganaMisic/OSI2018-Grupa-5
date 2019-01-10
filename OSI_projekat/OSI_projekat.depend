@@ -443,7 +443,7 @@
 	<windows.h>
 	<time.h>
 
-1547022340 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\brzo_kucanje.c
+1547073489 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\brzo_kucanje.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -451,7 +451,7 @@
 	"pomocne_funkcije.h"
 	"brzo_kucanje.h"
 
-1547050852 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\pomocne_funkcije.h
+1547073489 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\pomocne_funkcije.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -460,16 +460,16 @@
 
 1547022340 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\brzo_kucanje.h
 
-1547048209 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\kviz.c
+1547073489 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\kviz.c
 	"kviz.h"
 
-1546725989 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\kviz.h
+1547073612 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\kviz.h
 	<stdio.h>
 	<time.h>
 	<windows.h>
 	<math.h>
 
-1547048206 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\loto.c
+1547073489 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\loto.c
 	"loto.h"
 
 1547048206 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\loto.h
@@ -493,10 +493,10 @@
 	<stdio.h>
 	<windows.h>
 
-1547055394 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\meni.c
+1547073489 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\meni.c
 	"meni.h"
 
-1547051519 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\playground.c
+1547113472 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\playground.c
 	"playground.h"
 	"meni.h"
 	"pomocne_funkcije.h"
@@ -510,10 +510,10 @@
 	<windows.h>
 	<stdlib.h>
 
-1547051044 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\pomocne_funkcije.c
+1547112363 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\pomocne_funkcije.c
 	"pomocne_funkcije.h"
 
-1547055654 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\registracija.c
+1547073489 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\registracija.c
 	"registracija.h"
 
 1546725989 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\registracija.h
@@ -521,10 +521,10 @@
 	<stdlib.h>
 	<windows.h>
 
-1546725989 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\statistika.c
+1547073489 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\statistika.c
 	"statistika.h"
 
-1546725989 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\statistika.h
+1547073489 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\statistika.h
 	<stdio.h>
 	<windows.h>
 	<time.h>

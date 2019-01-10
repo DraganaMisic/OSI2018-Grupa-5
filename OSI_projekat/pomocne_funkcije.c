@@ -281,13 +281,13 @@ void pamtiBodove(int ukupnoBodovi)
         //return 0;
     }
 }
-long long razlika_vremena(char *buf1,char *buf2)
+long long razlika_vremena(char *buf1,char *buf2)    //funkcija koja izracunava razliku izmedju dva vremena u sekundama
 {
     char prvo[6][5],drugo[6][5];
     int j=0,k=0;
-    for(int i=0; i<20; i++)
+    for(int i=0; i<20; i++) //u ovoj petlji se string dijeli na manje stringove koij predstavljaju dan, mjesec, godinu, sat, minut i sekund
     {
-        //
+
         if(buf1[i]=='.' || (buf1[i]==' ' && buf1[i+1]==' ') || buf1[i]==':')
         {
             prvo[j][k]=drugo[j][k]='\0';
@@ -304,6 +304,7 @@ long long razlika_vremena(char *buf1,char *buf2)
             drugo[j][k++]=buf2[i];
         }
     }
+    //dodjeljivanje stringova koji predstavljaju vrijeme sttrukturi tm
     struct tm prvo_vrijeme= {0},drugo_vrijeme= {0};
     prvo_vrijeme.tm_mday=atoi(prvo[0]);
     prvo_vrijeme.tm_mon=atoi(prvo[1]);
@@ -318,8 +319,7 @@ long long razlika_vremena(char *buf1,char *buf2)
     drugo_vrijeme.tm_min=atoi(drugo[4]);
     drugo_vrijeme.tm_sec=atoi(drugo[5]);
     long long c;
-    //printf("%d ",prvo_vrijeme.tm_sec);
-    c=difftime(mktime(&prvo_vrijeme),mktime(&drugo_vrijeme));
+    c=difftime(mktime(&prvo_vrijeme),mktime(&drugo_vrijeme));   //racuna razliku izmedju dva vremena u sekundama
     return c;
 }
 //funkcija za brisanje datoteka prije registrovanja novog korisnika
