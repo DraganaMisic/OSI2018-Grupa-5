@@ -20,6 +20,13 @@ int generator()    // Generise slucajan broj u intervalu od 0 do 100
     return r;
 }
 
+int generator1() //Generise slucajan broj u intervalu od 0 do 5
+{
+    srand(time(0));
+    int r = (rand() % 5)+1;
+    return r;
+}
+
 int brojac_pokusaja(int niz[])    // Broji koliko smo puta pokusali pogoditi zamisljeni broj
 {
     int i;
@@ -87,28 +94,64 @@ jump:
     return suma_bodova;
 }
 
-int rezim0()   // Rezim koji radi ako je igrac prvi put u igri i omogucava mu da osvoji 300 bodova za prva 3 pogadjanja broja
+int rezim0()  // Rezim koji radi u slucaju da igrac ulazi prvi put u igru
 {
-    int n,p,broj;
     int suma_bodova = 0;
-    char c[20];
+    int niz_pokusaja[6]= {150,150,150,150,150,150},i,k;
     printf("Pogodite zamisljeni broj u intervalu od 0 do 100: \n");
-    do
+    int p = generator();
+    int broj;
+    int nizPomoc[3];
+    int pogodjeno = 0;
+    for( i=0; i<5; i++)
     {
-        printf("1. pokusaj: ");
-        broj=ucitaj_karakter();
-        if(broj==-1)
-            printf("Pogresan unos, pokusajte ponovo! \n");
+        for(int j=0; j<3; j++)
+            nizPomoc[j] = generator1();
+        do
+        {
+            printf("%d. pokusaj: ", i+1);
+            broj=ucitaj_karakter();
+            if(broj!=-1)
+            {
+                if(pretrazivanje_pokusaja(niz_pokusaja, broj))
+                    printf("Broj je vec unesen, ponovite pokusaj. \n");
+            }
+            else
+                printf("Pogresan unos, pokusajte ponovo! \n");
+
+        }
+        while(broj < 0 || broj > 100 || pretrazivanje_pokusaja(niz_pokusaja, broj));
+        niz_pokusaja[i] = broj;
+        if(broj == p || nizPomoc[0] == i || nizPomoc[1] == i || nizPomoc[2] == i)
+        {
+            suma_bodova += 100/(i+1);
+            pogodjeno++;
+            printf("Cestitamo, osvojili ste %d bodova!\n", 100/(i+1));
+            goto jump;
+        }
+        if(pogodjeno < 3 && i >= 2)
+        {
+            suma_bodova += 100/(i+1);
+            pogodjeno++;
+            printf("Cestitamo, osvojili ste %d bodova!\n", 100/(i+1));
+            goto jump;
+        }
+        if(i == 4)
+            printf("Zao nam je, pogrijesili ste, zamisljeni broj je %d! \n", p);
         else
         {
-            printf("Cestitamo, osvojili ste 100 bodova !\n");
-            suma_bodova+=100;
+            if(p > broj)
+                printf("Zamisljeni broj je veci od unesenog! \n");
+            else
+                printf("Zamisljeni broj je manji od unesenog! \n");
         }
     }
-    while(broj < 0 || broj > 100);
+jump:
     dodajStatistika("1", suma_bodova);
     return suma_bodova;
 }
+
+
 
 void naslov()
 {
