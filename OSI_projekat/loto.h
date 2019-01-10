@@ -8,8 +8,9 @@
 int *unos();
 void okvir();
 int *generisanje_brojeva();
-int izvlacenje(int*,int*);
+int izvlacenje(int*,int*,int);
 void ispis_niza(int*,int);
 void ispis_svega2(int*,int*,int,int,int,int);
 void ispis_svega1(int*,int*,int,int,int);
+void generisanje_novog_broja(int* ,int*,int ,int ,int );
 #endif // LOTO_H_INCLUDED

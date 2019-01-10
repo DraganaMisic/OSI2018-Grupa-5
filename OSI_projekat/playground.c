@@ -176,9 +176,9 @@ jump6:
                     {
                         ukupnoBodovi-=100;
                         system("cls");
-                        int *niz=unos();
+                        int *niz=unos(ukupnoBodovi);
                         int *niz1=generisanje_brojeva();
-                        bodoviTrecaIgra=izvlacenje(niz,niz1);
+                        bodoviTrecaIgra=izvlacenje(niz,niz1,ukupnoBodovi);
                         ukupnoBodovi+=bodoviTrecaIgra;
                         char c3[20];
                         int p3;

@@ -469,10 +469,10 @@
 	<windows.h>
 	<math.h>
 
-1547073489 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\loto.c
+1547126710 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\loto.c
 	"loto.h"
 
-1547048206 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\loto.h
+1547126802 c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\loto.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -496,7 +496,7 @@
 1547073489 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\meni.c
 	"meni.h"
 
-1547113472 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\playground.c
+1547120791 source:c:\users\win10\desktop\osi2018-grupa-5.git\osi_projekat\playground.c
 	"playground.h"
 	"meni.h"
 	"pomocne_funkcije.h"
