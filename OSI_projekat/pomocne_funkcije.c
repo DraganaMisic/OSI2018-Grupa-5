@@ -397,6 +397,7 @@ void prviIspis(int ukupnoBodovi)
 
 void zadnjiIspis(int ukupnoBodovi)
 {
+    printf("\n");
     printf("KONACNI BROJ BODOVA: %d\n",ukupnoBodovi);
 }
 void naslovPlayGround()

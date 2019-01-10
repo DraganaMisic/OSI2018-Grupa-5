@@ -183,12 +183,15 @@ jump6:
                         bodoviTrecaIgra=izvlacenje(niz,niz1,ukupnoBodovi);
                         ukupnoBodovi+=bodoviTrecaIgra;
                         char c3[20];
+                        printf("Da li zelite ponovo da igrate ovu igru ? \n");
+                        printf("1 - Da\n");
+                        printf("2 - Ne\n");
                         int p3;
                         do
                         {
-                            printf("Da li zelite ponovo da igrate ovu igru ? (1/0)\n");
+
                             scanf("%s",c3);
-                            p3=ispravnostBroja(c3);
+                            p3=ispravnostBroja2(c3);
                         }
                         while(p3==0);
                         p3=atoi(c3);
@@ -246,11 +249,14 @@ skok4:
             }
         }
     }
+    printf("Da li zelite da igrate neku drugu igru? \n");
+        printf("1 - Da\n");
+        printf("2 - Ne\n");
     do
     {
-        printf("Da li zelite da igrate neku drugu igru: (1/0)");
+
         scanf("%s",p);
-        n1=ispravnostBroja(p);
+        n1=ispravnostBroja2(p);
 
     }
     while(n1==0);
@@ -266,6 +272,8 @@ skok4:
         pamtiBodove(ukupnoBodovi);
         naslovPlayGround();
         zadnjiIspis(ukupnoBodovi);
+        Sleep(3000);
+        exit(0);
     }
 }
 

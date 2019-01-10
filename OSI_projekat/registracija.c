@@ -78,7 +78,7 @@ void registracija()
             brKaraktera++;
         fclose(fp); //zatvaranje datoteke
     }
-    else printf("Greska pri otvaranju datoteke za citanje!");
+    else printf("");
     if (brKaraktera==0) //registracija, prazna datoteka
     {
          brisi_datoteke();

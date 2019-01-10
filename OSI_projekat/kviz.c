@@ -135,13 +135,17 @@ int drugaIgra()
     //printf("\n Broj bodova: %d",bodoviDrugaIgra);
     if (bodoviDrugaIgra<0) printf("\nU ovoj igri ste izgubili %d bodova!\n",(-1)*bodoviDrugaIgra);
     else printf("\nU ovoj igri ste dobili %d bodova!",bodoviDrugaIgra);
+    dodajStatistika("2",bodoviDrugaIgra);
     char c3[20];
     int p3;
+    printf("Da li zelite ponovo da igrate ovu igru ? \n");
+        printf("1 - Da\n");
+        printf("2 - Ne\n");
     do//provjera da li korisnik zeli da ponovo igra igricu
     {
-        printf("Da li zelite ponovo da igrate ovu igru ? (1/0)\n");
+
         scanf("%s",c3);
-        p3=ispravnostBroja(c3);
+        p3=ispravnostBroja2(c3);
     }
     while(p3==0);
     p3=atoi(c3);
@@ -151,7 +155,7 @@ int drugaIgra()
 
         goto jump6;
     }
-    dodajStatistika("2",bodoviDrugaIgra); //dodavanje osvojenih bodova u statistiku
+    else
     return bodoviDrugaIgra;
 }
 

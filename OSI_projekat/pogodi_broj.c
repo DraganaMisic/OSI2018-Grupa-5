@@ -100,7 +100,7 @@ int rezim0()  // Rezim koji radi u slucaju da igrac ulazi prvi put u igru
     int niz_pokusaja[6]= {150,150,150,150,150,150},i,k;
     printf("Pogodite zamisljeni broj u intervalu od 0 do 100: \n");
     int p = generator();
-    int broj;
+    int broj, broj_prethodni;
     int nizPomoc[3];
     int pogodjeno = 0;
     for( i=0; i<5; i++)
@@ -110,6 +110,7 @@ int rezim0()  // Rezim koji radi u slucaju da igrac ulazi prvi put u igru
         do
         {
             printf("%d. pokusaj: ", i+1);
+            broj_prethodni = broj;
             broj=ucitaj_karakter();
             if(broj!=-1)
             {
@@ -124,6 +125,17 @@ int rezim0()  // Rezim koji radi u slucaju da igrac ulazi prvi put u igru
         niz_pokusaja[i] = broj;
         if(broj == p || nizPomoc[0] == i || nizPomoc[1] == i || nizPomoc[2] == i)
         {
+            if(broj_prethodni > p && broj > p)
+            {
+                if(i == 4)
+                    goto here3;
+                goto here1;
+            }
+            if(broj_prethodni < p && broj < p){
+                    if(i == 4)
+                    goto here3;
+                goto here2;
+            }
             suma_bodova += 100/(i+1);
             pogodjeno++;
             printf("Cestitamo, osvojili ste %d bodova!\n", 100/(i+1));
@@ -131,19 +143,39 @@ int rezim0()  // Rezim koji radi u slucaju da igrac ulazi prvi put u igru
         }
         if(pogodjeno < 3 && i >= 2)
         {
+            if(broj_prethodni > p && broj > p)
+            {
+                if(i == 4)
+                    goto here3;
+                goto here1;
+            }
+            if(broj_prethodni < p && broj < p)
+            {
+                if(i == 4)
+                    goto here3;
+                goto here2;
+            }
             suma_bodova += 100/(i+1);
             pogodjeno++;
             printf("Cestitamo, osvojili ste %d bodova!\n", 100/(i+1));
             goto jump;
         }
-        if(i == 4)
+        if(i == 4){
+                here3:
             printf("Zao nam je, pogrijesili ste, zamisljeni broj je %d! \n", p);
+        }
         else
         {
             if(p > broj)
+{
+    here2:
                 printf("Zamisljeni broj je veci od unesenog! \n");
+}
             else
+{
+    here1:
                 printf("Zamisljeni broj je manji od unesenog! \n");
+}
         }
     }
 jump:
@@ -201,13 +233,17 @@ int igranje()     // Glavna funkcija koja se poziva u PlayGround funkciji
         do
         {
 
-            printf("Da li zelite ponovo da igrate ovu igru? (1/0) \n");
+            printf("Da li zelite ponovo da igrate ovu igru? \n");
+            printf("1 - Da\n");
+            printf("2 - Ne\n");
             scanf("%s", m);
             p=atoi(m);
-            if(p<0 || p>1)
-                printf("Pogresan unos, mozete unijeti samo 1 ili 0 !\n");
+            if(p<1 || p>2)
+                printf("Pogresan unos, mozete unijeti samo 1 ili 2 !\n");
         }
-        while(p<0 || p>1);
+        while(p<1 || p>2);
+        if(p==2)
+            p=0;
         scanf("%c",&enter);
 
         if(br_igranja == 3)
